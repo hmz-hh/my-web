@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Create SSH Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #b71c1c;
+      margin-bottom: 10px;
+    }
+    .info-box {
+      background: #e6f4ea;
+      border-left: 5px solid #4caf50;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+    .details {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: monospace;
+    }
+    .copy-box {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+    input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #b71c1c;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #b00000;
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Create SSH UDP Account</h2>
+    <p class="info-box">Success! Your SSH UDP Custom account was successfully created.</p>
+    <div class="details">
+      Server: hamza.com<br>
+      Username: hamzauser<br>
+      Password: hm1234<br>
+      SSH Port: 1-65535<br>
+      UDPGW: 7200, 7300<br>
+      Created: 24 May 2025<br>
+      Expired: 31 May 2025
+    </div>
+    <div class="copy-box">
+      <input type="text" value="hamza.com:1-65535@hm" id="copyInput" readonly>
+      <button onclick="copyText()">Copy Configuration</button>
+    </div>
+    <a href="servers.html" class="back-link">← Back to servers</a>
+  </div>
+
+  <script>
+    function copyText() {
+      var copyText = document.getElementById("copyInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Copied to clipboard!");
+    }
+  </script>
+</body>
+</html>
