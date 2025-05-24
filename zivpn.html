@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SSHMax Servers</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -32,6 +33,7 @@
       padding: 1.5rem;
       max-width: 400px;
       margin-bottom: 2rem;
+      text-align: center;
     }
     .card img {
       width: 40px;
@@ -86,10 +88,26 @@
           <li>Active 5 day</li>
         </ul>
       </div>
-      <a href="account.html">
-        <button class="btn-create">Create Account</button>
-      </a>
+
+      <form id="captcha-form" onsubmit="return checkCaptcha()">
+        <div class="g-recaptcha" data-sitekey="6LeM5EcrAAAAAPkWEFSIwubZw7nyDVtUGwCnU2-h"></div>
+        <br>
+        <button class="btn-create" type="submit">Create Account</button>
+      </form>
     </div>
   </section>
+
+  <script>
+    function checkCaptcha() {
+      var response = grecaptcha.getResponse();
+      if(response.length == 0) {
+        alert("المرجو تأكيد أنك لست روبوت.");
+        return false;
+      } else {
+        window.location.href = "account.html";
+        return false;
+      }
+    }
+  </script>
 </body>
 </html>
