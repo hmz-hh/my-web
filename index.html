@@ -15,7 +15,6 @@
     body {
       background: linear-gradient(135deg, #9c0000, #b00000);
       color: white;
-      scroll-behavior: smooth;
     }
     header {
       padding: 1rem 1.5rem;
@@ -45,9 +44,12 @@
       position: absolute;
       left: 0;
     }
-    .menu-icon::before { top: -8px; }
-    .menu-icon::after { top: 8px; }
-
+    .menu-icon::before {
+      top: -8px;
+    }
+    .menu-icon::after {
+      top: 8px;
+    }
     .hero {
       text-align: center;
       padding: 2rem 1rem;
@@ -94,62 +96,13 @@
       background: #fff;
       color: #b00000;
       box-shadow: 3px 4px 0 #700000;
+      text-decoration: none;
     }
     .btn-secondary {
       background: transparent;
       border: 2px solid #fff;
       color: #fff;
-    }
-
-    .servers-section {
-      margin-top: 4rem;
-      padding: 2rem 1rem;
-      background: #fff;
-      color: #000;
-      text-align: center;
-    }
-    .server-card {
-      background: #f2f2f2;
-      padding: 1rem;
-      margin: 1rem auto;
-      border-radius: 15px;
-      max-width: 400px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .server-card img {
-      width: 40px;
-      border-radius: 50%;
-    }
-    .server-card h2 {
-      margin: 1rem 0 0.5rem;
-      font-size: 1.2rem;
-    }
-    .server-card .tag {
-      display: inline-block;
-      background: #0066cc;
-      color: white;
-      padding: 0.3rem 0.7rem;
-      border-radius: 10px;
-      font-size: 0.8rem;
-      margin: 0.3rem;
-    }
-    .server-card ul {
-      text-align: left;
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-    }
-    .server-card ul li {
-      margin-bottom: 0.4rem;
-    }
-    .server-card .create-btn {
-      margin-top: 1rem;
-      background: #d12d2d;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -166,30 +119,8 @@
       Experience ultimate security and unrestricted access with our AI-optimized servers and advanced encryption technology.
     </p>
     <div class="buttons">
-      <a href="#servers" class="btn btn-primary">Get Started</a>
-      <button class="btn btn-secondary">Explore Features</button>
-    </div>
-  </section>
-
-  <section class="servers-section" id="servers">
-    <div class="server-card">
-      <img src="https://flagcdn.com/w320/de.png" alt="Germany Flag">
-      <h2>GERMANY</h2>
-      <div class="tag">Free server</div>
-      <div class="tag">AI-optimized routing services</div>
-      <ul>
-        <li>AI-optimized routing</li>
-        <li>TCP/UDP protocols</li>
-        <li>Enhanced stability</li>
-      </ul>
-      <button class="create-btn">Create Account</button>
-    </div>
-
-    <div class="server-card">
-      <h2>AI-Enhanced SSH UDP Custom</h2>
-      <p>
-        Advanced tunneling technology for optimal performance with all TCP/UDP traffic using intelligent protocol optimization.
-      </p>
+      <a href="servers.html" class="btn btn-primary">Get Started</a>
+      <a href="#features" class="btn btn-secondary">Explore Features</a>
     </div>
   </section>
 </body>
