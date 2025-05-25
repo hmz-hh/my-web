@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VLESS Generator</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -54,12 +55,21 @@
       word-break: break-all;
       display: none;
     }
+
+    .g-recaptcha {
+      display: inline-block;
+      margin: 15px auto;
+    }
   </style>
 </head>
 <body>
 
   <h1>VLESS Account Generator</h1>
   <input type="text" id="username" placeholder="اكتب الاسم هنا">
+  
+  <!-- CAPTCHA هنا -->
+  <div class="g-recaptcha" data-sitekey="6Lfb5UcrAAAAAFYPcAUS36hnJE2JTLg4zdL8XNUI"></div>
+
   <br>
   <button onclick="generate()">Create an Account</button>
 
@@ -71,8 +81,15 @@
   <script>
     function generate() {
       const username = document.getElementById("username").value.trim();
+      const captchaResponse = grecaptcha.getResponse();
+
       if (username === "") {
         alert("المرجو كتابة اسم");
+        return;
+      }
+
+      if (!captchaResponse) {
+        alert("المرجو تأكيد أنك لست روبوت.");
         return;
       }
 
@@ -80,6 +97,8 @@
 
       document.getElementById("vlessLink").textContent = link;
       document.getElementById("output").style.display = "block";
+
+      grecaptcha.reset(); // إعادة تعيين الكابتشا بعد التحقق
     }
 
     function copyLink() {
