@@ -52,7 +52,7 @@
     }
     .hero {
       text-align: center;
-      padding: 2rem 1rem 0;
+      padding: 2rem 1rem 0.5rem;
     }
     .tagline {
       display: inline-block;
@@ -76,13 +76,14 @@
       font-size: 1rem;
       color: #ddd;
       line-height: 1.6;
+      margin-bottom: 1rem;
     }
     .buttons {
-      margin-top: 1rem;
       display: flex;
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
     .btn {
       padding: 0.8rem 1.5rem;
@@ -105,7 +106,6 @@
       text-decoration: none;
     }
     .vpn-section {
-      margin-top: 0.5rem;
       padding: 1rem 2rem 2rem;
       display: flex;
       flex-wrap: wrap;
@@ -142,15 +142,6 @@
     .vpn-title {
       margin: 1rem 0 0.5rem;
     }
-    .vpn-tag {
-      background: #0047ff;
-      color: white;
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 15px;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-    }
     .vpn-features {
       list-style: none;
       padding-left: 0;
@@ -167,6 +158,9 @@
       border-radius: 12px;
       font-weight: bold;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
     }
   </style>
 </head>
@@ -202,7 +196,7 @@
         <li>✓ Unlimited Bandwidth</li>
         <li>✓ Very Fast</li>
       </ul>
-      <button class="vpn-button">→ Create Account</button>
+      <a href="trojan.html" class="vpn-button">→ Create Account</a>
     </div>
 
     <!-- V2Ray Vless Card -->
@@ -218,8 +212,8 @@
         <li>✓ More flexible in encryption</li>
         <li>✓ Multiple platforms</li>
       </ul>
-      <button class="vpn-button">→ Create Account</button>
+      <a href="v2ray.html" class="vpn-button">→ Create Account</a>
     </div>
   </section>
 </body>
-    </html>
+</html>
