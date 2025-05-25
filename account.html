@@ -1,109 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Create SSH Account</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <title>Create SSH UDP Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fff;
       margin: 0;
-      padding: 22px;
-      font-size: 17px;
+      padding: 20px;
+      background-color: #f5f7fa;
     }
     .container {
-      max-width: 660px;
+      max-width: 480px;
       margin: 0 auto;
-      padding: 22px;
-      border: 1px solid #ddd;
-      border-radius: 22px;
       background: #fff;
-      box-shadow: 0 9px 26px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      overflow: hidden;
     }
-    h2 {
-      color: #b71c1c;
-      margin-bottom: 12px;
-      font-size: 24px;
+    .header {
+      background: linear-gradient(90deg, #3f51b5, #673ab7);
+      color: white;
+      padding: 24px;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
     }
-    .info-box {
-      background: #e6f4ea;
-      border-left: 5px solid #4caf50;
+    .header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .header p {
+      font-size: 14px;
+      margin: 4px 0 0 0;
+      opacity: 0.9;
+    }
+    .success-box {
+      background: #e8f5e9;
+      color: #2e7d32;
       padding: 16px;
-      margin-bottom: 22px;
-      font-size: 17px;
-      color: #333;
-    }
-    .details {
-      background: #f9f9f9;
-      padding: 16px;
-      border-radius: 11px;
-      font-family: monospace;
-      font-size: 17px;
-    }
-    .copy-box {
+      font-size: 15px;
       display: flex;
       align-items: center;
-      margin-top: 22px;
+      gap: 10px;
+      border-bottom: 1px solid #e0e0e0;
     }
-    input {
-      flex: 1;
-      padding: 11px;
-      font-size: 17px;
-      border-radius: 9px 0 0 9px;
+    .success-box::before {
+      content: "✔";
+      font-size: 18px;
+    }
+    .details {
+      padding: 20px;
+      font-family: monospace;
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .details span {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #0d47a1;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      margin-left: 8px;
+    }
+    .copy-box {
+      padding: 0 20px 20px;
+    }
+    .copy-input {
+      width: 100%;
+      font-family: monospace;
+      font-size: 15px;
+      padding: 12px;
+      margin-top: 12px;
       border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f1f1f1;
     }
-    button {
-      padding: 11px 22px;
-      background-color: #d32f2f;
+    .copy-btn {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 12px;
+      font-size: 16px;
+      background: #1e88e5;
       color: white;
       border: none;
-      border-radius: 0 9px 9px 0;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 17px;
     }
-    button:hover {
-      background-color: #b71c1c;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 22px;
-      color: #b00000;
-      text-decoration: underline;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 17px;
+    .copy-btn:hover {
+      background: #1565c0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Create SSH UDP Account</h2>
-    <p class="info-box">Success! Your SSH UDP Custom account was successfully created.</p>
-    <div class="details">
-      Server: gr.ha-vps.store<br>
-      Username: hamzauser<br>
-      Password: hm1234<br>
-      SSH Port: 1-65535<br>
-      UDPGW: 7200, 7300<br>
-      Created: 24 May 2025<br>
-      Expired: 31 May 2025
-    </div>
-    <div class="copy-box">
-      <input type="text" value="hamza.com:1-65535@hm" id="copyInput" readonly>
-      <button onclick="copyText()">Copy Configuration</button>
-    </div>
-    <a href="servers.html" class="back-link">← Back to servers</a>
-  </div>
 
-  <script>
-    function copyText() {
-      var copyText = document.getElementById("copyInput");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      alert("Copied to clipboard!");
-    }
-  </script>
+<div class="container">
+  <div class="header">
+    <h1>Create SSH UDP Account</h1>
+    <p>SSH UDP CUSTOM FR - France</p>
+  </div>
+  <div class="success-box">
+    Success! Your account was successfully created.
+  </div>
+  <div class="details">
+    Server: fr.udpserv.site <span>Premium SSH server</span><br>
+    Username: sshocean-ajja<br>
+    Password: vksk<br>
+    SSH Port: 1-65535<br>
+    UDPGW: 7200, 7300<br>
+    Created: 26 May 2025<br>
+    Expired: 29 May 2025
+  </div>
+  <div class="copy-box">
+    <input type="text" value="te:1-65535@sshocean-ajja:vksk" id="configText" class="copy-input" readonly>
+    <button class="copy-btn" onclick="copyToClipboard()">Copy to HC</button>
+  </div>
+</div>
+
+<script>
+  function copyToClipboard() {
+    const input = document.getElementById("configText");
+    input.select();
+    input.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("Copied to clipboard!");
+  }
+</script>
+
 </body>
 </html>
