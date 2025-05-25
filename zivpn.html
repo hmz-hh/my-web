@@ -11,81 +11,112 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-    }
-    header {
-      background: #b00000;
+      background: linear-gradient(160deg, #b71c1c, #8e0000);
       color: white;
+    }
+
+    header {
+      background: transparent;
+      color: #fff;
       padding: 1rem 1.5rem;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 700;
     }
+
     .server-section {
       padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+      padding: 2rem;
       max-width: 400px;
-      margin-bottom: 2rem;
       text-align: center;
+      color: white;
     }
+
     .card img {
       width: 40px;
     }
+
     .card h2 {
       margin-top: 1rem;
-      font-size: 1.3rem;
+      font-size: 1.6rem;
     }
+
     .tags {
       margin: 0.5rem 0;
     }
+
     .tag {
-      background: #007bff;
+      background: rgba(255, 255, 255, 0.15);
       color: white;
       font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 10px;
+      padding: 5px 12px;
+      border-radius: 12px;
       margin: 0 5px 5px 0;
       display: inline-block;
     }
+
     .features {
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       text-align: left;
       line-height: 1.8;
+      color: #f0f0f0;
     }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li::before {
+      content: "•";
+      color: #fff;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
     .btn-create {
-      margin-top: 1rem;
-      background: #b00000;
-      color: white;
-      padding: 0.8rem 1.2rem;
+      margin-top: 1.5rem;
+      background: white;
+      color: #b00000;
+      padding: 0.9rem 1.5rem;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s ease;
+    }
+
+    .btn-create:hover {
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
-  <header>SSHMax Servers</header>
+  <header>ssh<span style="opacity: 0.3;">vpn</span></header>
   <section class="server-section">
     <div class="card">
       <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" />
       <h2>GERMANY</h2>
       <div class="tags">
         <span class="tag">Free server</span>
-        <span class="tag">AI-optimized routing services</span>
+        <span class="tag">AI-optimized routing</span>
       </div>
       <div class="features">
         <ul>
           <li>AI-optimized routing</li>
           <li>TUDP protocols</li>
-          <li>Active 5 day</li>
+          <li>Active 5 days</li>
         </ul>
       </div>
 
@@ -100,7 +131,7 @@
   <script>
     function checkCaptcha() {
       var response = grecaptcha.getResponse();
-      if(response.length == 0) {
+      if (response.length == 0) {
         alert("المرجو تأكيد أنك لست روبوت.");
         return false;
       } else {
