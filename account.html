@@ -14,7 +14,6 @@
       background: linear-gradient(160deg, #b71c1c, #8e0000);
       color: white;
     }
-
     .container {
       max-width: 890px;
       margin: 0 auto;
@@ -24,13 +23,11 @@
       backdrop-filter: blur(4px);
       box-shadow: 0 10px 28px rgba(0,0,0,0.3);
     }
-
     h2 {
       color: #fff;
       margin-bottom: 16px;
       font-size: 28px;
     }
-
     .info-box {
       background: rgba(255, 255, 255, 0.1);
       border-left: 5px solid #4caf50;
@@ -39,7 +36,6 @@
       font-size: 18px;
       color: #e0ffe0;
     }
-
     .details {
       background: rgba(255, 255, 255, 0.1);
       padding: 18px;
@@ -49,40 +45,32 @@
       color: #ffffff;
       line-height: 1.6;
     }
-
     .copy-box {
       display: flex;
+      flex-direction: column;
       margin-top: 22px;
-      flex-wrap: wrap;
-      gap: 10px;
     }
-
     input {
-      flex: 1;
       padding: 12px;
       font-size: 17px;
-      border-radius: 9px 0 0 9px;
+      border-radius: 9px;
       border: none;
+      margin-bottom: 10px;
       color: #222;
-      min-width: 0;
     }
-
     button {
-      padding: 12px 20px;
+      padding: 12px;
       background-color: #ffffff;
       color: #b71c1c;
       border: none;
-      border-radius: 0 9px 9px 0;
+      border-radius: 9px;
       cursor: pointer;
       font-weight: bold;
       font-size: 17px;
-      white-space: nowrap;
     }
-
     button:hover {
       background-color: #f0f0f0;
     }
-
     .back-link {
       display: inline-block;
       margin-top: 22px;
@@ -93,16 +81,17 @@
     }
 
     @media (max-width: 600px) {
-      .copy-box {
-        flex-direction: column;
+      body {
+        padding: 16px;
       }
-
-      input {
-        border-radius: 9px;
+      .container {
+        padding: 18px;
       }
-
-      button {
-        border-radius: 9px;
+      h2 {
+        font-size: 22px;
+      }
+      .details, .info-box {
+        font-size: 16px;
       }
     }
   </style>
@@ -114,7 +103,7 @@
     <div class="details">
       Server: fr.udpserv.site<br>
       Username: sshocean-ajja<br>
-      Password: vksk<br>
+      Password: hamza<br>
       SSH Port: 1-65535<br>
       UDPGW: 7200, 7300<br>
       Created: 26 May 2025<br>
@@ -124,8 +113,6 @@
       <input type="text" value="te:1-65535@sshocean-ajja:vksk" id="copyInput" readonly>
       <button onclick="copyText()">Copy Configuration</button>
     </div>
-    <a href="servers.html" class="back-link">← Back to servers</a>
-  </div>
 
   <script>
     function copyText() {
