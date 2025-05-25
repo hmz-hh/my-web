@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SSHMax Clone</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -29,26 +30,6 @@
     }
     .logo span {
       color: #d12d2d;
-    }
-    .menu-icon {
-      width: 24px;
-      height: 2px;
-      background: #000;
-      position: relative;
-    }
-    .menu-icon::before, .menu-icon::after {
-      content: "";
-      width: 24px;
-      height: 2px;
-      background: #000;
-      position: absolute;
-      left: 0;
-    }
-    .menu-icon::before {
-      top: -8px;
-    }
-    .menu-icon::after {
-      top: 8px;
     }
     .hero {
       text-align: center;
@@ -105,119 +86,107 @@
       text-decoration: none;
     }
 
-    .vpn-section {
-      padding: 2rem;
+    .card-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
+      margin-top: 2rem;
     }
-    .vpn-card {
-      background: white;
+
+    .card {
+      background-color: #fff;
+      color: #000;
+      width: 270px;
       border-radius: 20px;
       padding: 1.5rem;
-      color: black;
-      width: 300px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
-    .vpn-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .vpn-header img {
-      border-radius: 50%;
-      background: #f2f2f2;
-      padding: 0.5rem;
-      width: 48px;
-      height: 48px;
-    }
-    .vpn-badge {
-      background: #0047ff;
-      color: white;
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-    .vpn-title {
-      margin: 1rem 0 0.5rem;
-    }
-    .vpn-tag {
-      background: #0047ff;
-      color: white;
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 15px;
-      font-size: 0.8rem;
+
+    .card img {
+      width: 60px;
       margin-bottom: 1rem;
     }
-    .vpn-features {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.9rem;
-      line-height: 1.8;
-    }
-    .vpn-button {
-      margin-top: 1rem;
-      background: #0047ff;
-      color: white;
-      padding: 0.7rem 1rem;
-      width: 100%;
-      border: none;
-      border-radius: 12px;
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
       font-weight: bold;
+    }
+
+    .servers-count {
+      background-color: #0047ab;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+    }
+
+    .material-icons {
+      color: green;
+      font-size: 18px;
+    }
+
+    .card button {
+      margin-top: 1rem;
+      background-color: #0047ab;
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 20px;
       cursor: pointer;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">ssh<span>vpn</span></div>
-    <div class="menu-icon"></div>
   </header>
+
   <section class="hero">
     <div class="tagline">AI-Powered VPN Technology</div>
     <h1 class="title">Next-Gen <span>Secure</span><br/>Tunneling Solutions</h1>
     <p class="description">
       Experience ultimate security and unrestricted access with our AI-optimized servers and advanced encryption technology.
     </p>
-    <div class="buttons">
-      <a href="httpcustome.html" class="btn btn-primary">Http custome</a>
-      <a href="zivpn.html" class="btn btn-secondary">zivpn</a>
-    </div>
-  </section>
-  <section class="vpn-section">
-    <!-- Trojan VPN Card -->
-    <div class="vpn-card">
-      <div class="vpn-header">
-        <img src="https://sshocean.net/assets/images/icons/icon-trojan.svg" alt="Trojan Icon" />
-        <div class="vpn-badge">22 Servers</div>
-      </div>
-      <h3 class="vpn-title">Trojan VPN</h3>
-      <div class="vpn-tag">Fast Modern VPN</div>
-      <ul class="vpn-features">
-        <li>✓ Very Fast</li>
-        <li>✓ Multiple protocols</li>
-        <li>✓ More flexible in encryption</li>
-        <li>✓ Unlimited Bandwidth</li>
-      </ul>
-      <button class="vpn-button">→ Create Account</button>
-    </div>
 
-    <!-- V2Ray Vless Card -->
-    <div class="vpn-card">
-      <div class="vpn-header">
-        <img src="https://sshocean.net/assets/images/icons/icon-v2ray.svg" alt="V2Ray Icon" />
-        <div class="vpn-badge">25 Servers</div>
+    <div class="card-container">
+      <!-- Trojan Card -->
+      <div class="card">
+        <div class="servers-count">22 Servers</div>
+        <img src="https://sshocean.net/assets/images/icons/icon-trojan.svg" alt="Trojan">
+        <h3>Trojan VPN</h3>
+        <div class="feature"><span class="material-icons">check_circle</span>Very Fast</div>
+        <div class="feature"><span class="material-icons">check_circle</span>Multiple protocols</div>
+        <div class="feature"><span class="material-icons">check_circle</span>More flexible in encryption</div>
+        <div class="feature"><span class="material-icons">check_circle</span>Unlimited Bandwidth</div>
+        <button>Create Account</button>
       </div>
-      <h3 class="vpn-title">V2Ray Vless</h3>
-      <ul class="vpn-features">
-        <li>✓ Faster and performs better</li>
-        <li>✓ Unlimited bandwidth</li>
-        <li>✓ More flexible in encryption</li>
-        <li>✓ Multiple platforms</li>
-      </ul>
-      <button class="vpn-button">→ Create Account</button>
+
+      <!-- V2Ray Card -->
+      <div class="card">
+        <div class="servers-count">25 Servers</div>
+        <img src="https://sshocean.net/assets/images/icons/icon-v2ray.svg" alt="V2Ray">
+        <h3>V2Ray Vless</h3>
+        <div class="feature"><span class="material-icons">check_circle</span>Faster and performs better</div>
+        <div class="feature"><span class="material-icons">check_circle</span>Unlimited bandwidth</div>
+        <div class="feature"><span class="material-icons">check_circle</span>More flexible in encryption</div>
+        <div class="feature"><span class="material-icons">check_circle</span>Multiple platforms</div>
+        <button>Create Account</button>
+      </div>
     </div>
   </section>
 </body>
