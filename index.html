@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SSHMax Clone</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -30,6 +29,26 @@
     }
     .logo span {
       color: #d12d2d;
+    }
+    .menu-icon {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      position: relative;
+    }
+    .menu-icon::before, .menu-icon::after {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      left: 0;
+    }
+    .menu-icon::before {
+      top: -8px;
+    }
+    .menu-icon::after {
+      top: 8px;
     }
     .hero {
       text-align: center;
@@ -85,16 +104,15 @@
       color: #fff;
       text-decoration: none;
     }
-
-    .card-container {
+    .cards {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 1rem;
     }
-
     .card {
+      position: relative;
       background-color: #fff;
       color: #000;
       width: 270px;
@@ -103,57 +121,34 @@
       text-align: center;
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
-
     .card img {
-      width: 60px;
+      width: 48px;
+      height: 48px;
       margin-bottom: 1rem;
     }
-
     .card h3 {
       font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
-      font-weight: bold;
     }
-
     .servers-count {
       background-color: #0047ab;
       color: #fff;
-      padding: 4px 12px;
+      padding: 6px 14px;
       border-radius: 20px;
-      font-size: 0.8rem;
-      position: absolute;
-      right: 15px;
-      top: 15px;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.4rem 0;
-      font-size: 0.95rem;
-    }
-
-    .material-icons {
-      color: green;
-      font-size: 18px;
-    }
-
-    .card button {
-      margin-top: 1rem;
-      background-color: #0047ab;
-      color: white;
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
+      font-size: 0.85rem;
       font-weight: bold;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">ssh<span>vpn</span></div>
+    <div class="menu-icon"></div>
   </header>
 
   <section class="hero">
@@ -162,31 +157,29 @@
     <p class="description">
       Experience ultimate security and unrestricted access with our AI-optimized servers and advanced encryption technology.
     </p>
+    <div class="buttons">
+      <a href="httpcustome.html" class="btn btn-primary">Http custome</a>
+      <a href="zivpn.html" class="btn btn-secondary">zivpn</a>
+    </div>
+  </section>
 
-    <div class="card-container">
-      <!-- Trojan Card -->
-      <div class="card">
-        <div class="servers-count">22 Servers</div>
-        <img src="https://sshocean.net/assets/images/icons/icon-trojan.svg" alt="Trojan">
-        <h3>Trojan VPN</h3>
-        <div class="feature"><span class="material-icons">check_circle</span>Very Fast</div>
-        <div class="feature"><span class="material-icons">check_circle</span>Multiple protocols</div>
-        <div class="feature"><span class="material-icons">check_circle</span>More flexible in encryption</div>
-        <div class="feature"><span class="material-icons">check_circle</span>Unlimited Bandwidth</div>
-        <button>Create Account</button>
-      </div>
+  <section class="cards">
+    <div class="card">
+      <div class="servers-count">25 Servers</div>
+      <img src="https://sshocean.net/assets/images/icons/icon-trojan.svg" alt="Trojan Icon">
+      <h3>Trojan Servers</h3>
+    </div>
 
-      <!-- V2Ray Card -->
-      <div class="card">
-        <div class="servers-count">25 Servers</div>
-        <img src="https://sshocean.net/assets/images/icons/icon-v2ray.svg" alt="V2Ray">
-        <h3>V2Ray Vless</h3>
-        <div class="feature"><span class="material-icons">check_circle</span>Faster and performs better</div>
-        <div class="feature"><span class="material-icons">check_circle</span>Unlimited bandwidth</div>
-        <div class="feature"><span class="material-icons">check_circle</span>More flexible in encryption</div>
-        <div class="feature"><span class="material-icons">check_circle</span>Multiple platforms</div>
-        <button>Create Account</button>
-      </div>
+    <div class="card">
+      <div class="servers-count">22 Servers</div>
+      <img src="https://sshocean.net/assets/images/icons/icon-v2ray.svg" alt="V2ray Icon">
+      <h3>V2Ray Servers</h3>
+    </div>
+
+    <div class="card">
+      <div class="servers-count">17 Servers</div>
+      <img src="https://fonts.gstatic.com/s/i/materialicons/check_circle/v14/24px.svg" alt="Check Circle">
+      <h3>Verified Servers</h3>
     </div>
   </section>
 </body>
