@@ -2,93 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>VPN Card</title>
+  <title>VPN Cards</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       display: flex;
-      justify-content: center;
-      padding: 90px;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 20px;
+      gap: 40px;
     }
 
     .card {
       background: white;
-      width: 532px; /* 280 * 1.9 */
-      border-radius: 38px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      padding: 48px;
+      width: 476px; /* 280 * 1.7 */
+      border-radius: 34px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+      padding: 42px;
       text-align: center;
       position: relative;
     }
 
     .server-badge {
       position: absolute;
-      top: 28px;
-      right: 28px;
+      top: 24px;
+      right: 24px;
       background-color: #d32f2f;
       color: white;
-      padding: 10px 26px;
-      border-radius: 32px;
-      font-size: 23px;
+      padding: 9px 22px;
+      border-radius: 28px;
+      font-size: 21px;
       font-weight: bold;
     }
 
     .flag {
-      width: 133px; /* 70 * 1.9 */
-      height: 133px;
+      width: 119px; /* 70 * 1.7 */
+      height: 119px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       border: 6px solid #f4f4f4;
     }
 
     .country {
-      font-size: 38px;
+      font-size: 34px;
       font-weight: bold;
-      margin: 22px 0;
+      margin: 20px 0;
     }
 
     .features {
       list-style: none;
       padding: 0;
-      margin: 38px 0;
+      margin: 32px 0;
       color: #555;
-      font-size: 26px;
+      font-size: 23px;
     }
 
     .features li::before {
       content: "✔️";
       color: #d32f2f;
-      margin-right: 12px;
+      margin-right: 10px;
     }
 
     .btn {
       background-color: #d32f2f;
       color: white;
       border: none;
-      border-radius: 38px;
-      padding: 25px 36px;
-      font-size: 28px;
+      border-radius: 36px;
+      padding: 22px 32px;
+      font-size: 26px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 12px 0 #9a1e1e;
+      box-shadow: 0 10px 0 #9a1e1e;
       display: inline-block;
       width: 100%;
     }
 
     .btn:active {
       box-shadow: 0 4px 0 #9a1e1e;
-      transform: translateY(8px);
+      transform: translateY(6px);
     }
   </style>
 </head>
 <body>
 
+  <!-- بطاقة فرنسا -->
   <div class="card">
     <div class="server-badge">1 Server</div>
-    <img src="https://flagcdn.com/w320/ru.png" alt="Russia Flag" class="flag">
-    <div class="country">RUSSIA</div>
+    <img src="https://flagcdn.com/w320/fr.png" alt="France Flag" class="flag">
+    <div class="country">FRANCE</div>
     <ul class="features">
       <li>AI-optimized routing</li>
       <li>TCP/UDP protocols</li>
@@ -96,98 +99,12 @@
     </ul>
     <button class="btn">Create Account</button>
   </div>
-  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>VPN Card</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      padding: 90px;
-    }
 
-    .card {
-      background: white;
-      width: 532px; /* 280 * 1.9 */
-      border-radius: 38px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      padding: 48px;
-      text-align: center;
-      position: relative;
-    }
-
-    .server-badge {
-      position: absolute;
-      top: 28px;
-      right: 28px;
-      background-color: #d32f2f;
-      color: white;
-      padding: 10px 26px;
-      border-radius: 32px;
-      font-size: 23px;
-      font-weight: bold;
-    }
-
-    .flag {
-      width: 133px; /* 70 * 1.9 */
-      height: 133px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 22px;
-      border: 6px solid #f4f4f4;
-    }
-
-    .country {
-      font-size: 38px;
-      font-weight: bold;
-      margin: 22px 0;
-    }
-
-    .features {
-      list-style: none;
-      padding: 0;
-      margin: 38px 0;
-      color: #555;
-      font-size: 26px;
-    }
-
-    .features li::before {
-      content: "✔️";
-      color: #d32f2f;
-      margin-right: 12px;
-    }
-
-    .btn {
-      background-color: #d32f2f;
-      color: white;
-      border: none;
-      border-radius: 38px;
-      padding: 25px 36px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 12px 0 #9a1e1e;
-      display: inline-block;
-      width: 100%;
-    }
-
-    .btn:active {
-      box-shadow: 0 4px 0 #9a1e1e;
-      transform: translateY(8px);
-    }
-  </style>
-</head>
-<body>
-
+  <!-- بطاقة ألمانيا -->
   <div class="card">
     <div class="server-badge">1 Server</div>
-    <img src="https://flagcdn.com/w320/ru.png" alt="Russia Flag" class="flag">
-    <div class="country">RUSSIA</div>
+    <img src="https://flagcdn.com/w320/de.png" alt="Germany Flag" class="flag">
+    <div class="country">GERMANY</div>
     <ul class="features">
       <li>AI-optimized routing</li>
       <li>TCP/UDP protocols</li>
