@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trojan VPN</title>
+  <meta charset="UTF-8">
+  <title>RaceVPN Servers</title>
   <style>
     body {
-      background-color: #121212;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
     }
-    .message {
-      font-size: 1.5rem;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .flag {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    .location {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .server-type {
+      color: #555;
+      font-size: 14px;
+    }
+    .offline {
+      color: red;
+      text-decoration: line-through;
     }
   </style>
 </head>
 <body>
-  <div class="message">
-   tro مرحباً بك، يتم التطوير...
-  </div>
+
+<h2>RaceVPN Server List</h2>
+<div class="container">
+  <div class="card"><div class="location">🇸🇪 Sweden</div><div class="server-type">vlesswebsocket server<br>location: Stockholm</div></div>
+  <div class="card"><div class="location">🇫🇷 France2</div><div class="server-type">vlesswebsocket server<br>location: <span class="offline">Gravelines</span></div></div>
+  <div class="card"><div class="location">🇪🇸 Spain</div><div class="server-type">vlesswebsocket server<br>location: <span class="offline">Madrid</span></div></div>
+  <div class="card"><div class="location">🇷🇺 Rusia</div><div class="server-type">vlesswebsocket server<br>location: <span class="offline">Moscow</span></div></div>
+  <div class="card"><div class="location">🇺🇸 Unitedstates2</div><div class="server-type">vlesswebsocket server<br>location: <span class="offline">Newyork</span></div></div>
+  <div class="card"><div class="location">🇺🇦 Ukraine</div><div class="server-type">vlesswebsocket server<br>location: <span class="offline">Ukraine</span></div></div>
+  <div class="card"><div class="location">🇩🇪 German2</div><div class="server-type">vlesswebsocket server<br>location: <span class="offline">Frankfurt</span></div></div>
+  <div class="card"><div class="location">🇬🇧 Unitedkingdom2</div><div class="server-type">vlesswebsocket server<br>location: <span class="offline">London</span></div></div>
+</div>
+
 </body>
 </html>
