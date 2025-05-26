@@ -1,3 +1,2 @@
-function sayHello() {
-  alert("أهلا وسهلا!");
-}
+//  JavaScript
+//  JS
