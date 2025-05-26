@@ -1,127 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>VPN Cards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #a30000, #600000);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 100px 20px;
-      gap: 50px;
-    }
+<style>
+  body {
+    margin: 0;
+    padding: 0 20px 100px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #a30000, #600000);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    min-height: 100vh;
+  }
 
-    .card {
-      background: white;
-      width: 557px;
-      border-radius: 39px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      padding: 50px;
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+  .card {
+    background: white;
+    width: 557px;
+    border-radius: 39px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
 
-    .server-badge {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      background-color: #d32f2f;
-      color: white;
-      padding: 11px 28px;
-      border-radius: 34px;
-      font-size: 24px;
-      font-weight: bold;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
+  .server-badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: #d32f2f;
+    color: white;
+    padding: 11px 28px;
+    border-radius: 34px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
 
-    .flag {
-      width: 139px;
-      height: 139px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 24px;
-      border: 6px solid #eee;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+  .flag {
+    width: 139px;
+    height: 139px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+    border: 6px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 
-    .country {
-      font-size: 40px;
-      font-weight: bold;
-      margin: 24px 0;
-      color: #a30000;
-    }
+  .country {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 24px 0;
+    color: #a30000;
+  }
 
-    .features {
-      list-style: none;
-      padding: 0;
-      margin: 40px 0;
-      color: #555;
-      font-size: 27px;
-    }
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+    color: #555;
+    font-size: 27px;
+  }
 
-    .features li::before {
-      content: "✔️";
-      color: #d32f2f;
-      margin-right: 14px;
-    }
+  .features li::before {
+    content: "✔️";
+    color: #d32f2f;
+    margin-right: 14px;
+  }
 
-    .btn {
-      background-color: #d32f2f;
-      color: white;
-      border: none;
-      border-radius: 40px;
-      padding: 26px 38px;
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 13px 0 #9a1e1e;
-      display: inline-block;
-      width: 100%;
-      transition: all 0.2s ease-in-out;
-    }
+  .btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 26px 38px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 13px 0 #9a1e1e;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
 
-    .btn:active {
-      box-shadow: 0 5px 0 #9a1e1e;
-      transform: translateY(8px);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- بطاقة فرنسا -->
-  <div class="card">
-    <div class="server-badge">1 Server</div>
-    <img src="https://flagcdn.com/w320/fr.png" alt="France Flag" class="flag">
-    <div class="country">FRANCE</div>
-    <ul class="features">
-      <li>AI-optimized routing</li>
-      <li>TCP/UDP protocols</li>
-      <li>Enhanced stability</li>
-    </ul>
-    <button class="btn">Create Account</button>
-  </div>
-
-  <!-- بطاقة ألمانيا -->
-  <div class="card">
-    <div class="server-badge">1 Server</div>
-    <img src="https://flagcdn.com/w320/de.png" alt="Germany Flag" class="flag">
-    <div class="country">GERMANY</div>
-    <ul class="features">
-      <li>AI-optimized routing</li>
-      <li>TCP/UDP protocols</li>
-      <li>Enhanced stability</li>
-    </ul>
-    <button class="btn">Create Account</button>
-  </div>
-
-</body>
-</html>
+  .btn:active {
+    box-shadow: 0 5px 0 #9a1e1e;
+    transform: translateY(8px);
+  }
+</style>
