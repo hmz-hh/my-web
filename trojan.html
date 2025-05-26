@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background: linear-gradient(to bottom, #a30000, #600000);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -16,12 +16,18 @@
 
     .card {
       background: white;
-      width: 557px; /* 280 * 1.99 */
+      width: 557px;
       border-radius: 39px;
-      box-shadow: 0 7px 22px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
       padding: 50px;
       text-align: center;
       position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
     .server-badge {
@@ -34,21 +40,24 @@
       border-radius: 34px;
       font-size: 24px;
       font-weight: bold;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
 
     .flag {
-      width: 139px; /* 70 * 1.99 */
+      width: 139px;
       height: 139px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 24px;
-      border: 6px solid #f4f4f4;
+      border: 6px solid #eee;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .country {
       font-size: 40px;
       font-weight: bold;
       margin: 24px 0;
+      color: #a30000;
     }
 
     .features {
@@ -77,6 +86,7 @@
       box-shadow: 0 13px 0 #9a1e1e;
       display: inline-block;
       width: 100%;
+      transition: all 0.2s ease-in-out;
     }
 
     .btn:active {
