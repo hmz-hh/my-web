@@ -1,0 +1,227 @@
+<?php
+// نوع المحتوى
+header("Content-Type: text/html; charset=UTF-8");
+// إغلاق الوصول المباشر للملف إذا بغيتي تزيد حماية
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
+    // يمكن تزيد هنا شروط أو حماية إضافية
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSHMax Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #9c0000, #b00000);
+      color: white;
+    }
+    header {
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #000;
+    }
+    .logo span {
+      color: #d12d2d;
+    }
+    .menu-icon {
+      width: 24px;
+      height: 2px;
+      background: #000;
+      position: relative;
+    }
+    .menu-icon::before, .menu-icon::after {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      left: 0;
+    }
+    .menu-icon::before {
+      top: -8px;
+    }
+    .menu-icon::after {
+      top: 8px;
+    }
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem 0.5rem;
+    }
+    .tagline {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .title span {
+      color: #f9bfbf;
+    }
+    .description {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      padding: 0.8rem 1.5rem;
+      border-radius: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      background: #fff;
+      color: #b00000;
+      box-shadow: 3px 4px 0 #700000;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      text-decoration: none;
+    }
+    .vpn-section {
+      padding: 0 2rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .vpn-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      color: black;
+      width: 300px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .vpn-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .vpn-header img {
+      border-radius: 50%;
+      background: #f2f2f2;
+      padding: 0.5rem;
+      width: 48px;
+      height: 48px;
+    }
+    .vpn-badge {
+      background: #0047ff;
+      color: white;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .vpn-title {
+      margin: 1rem 0 0.5rem;
+    }
+    .vpn-features {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .vpn-button {
+      margin-top: 1rem;
+      background: #0047ff;
+      color: white;
+      padding: 0.7rem 1rem;
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ssh<span>vpn</span></div>
+    <div class="menu-icon"></div>
+  </header>
+
+  <section class="hero">
+    <div class="tagline">AI-Powered VPN Technology</div>
+    <h1 class="title">Next-Gen <span>Secure</span><br/>Tunneling Solutions</h1>
+    <p class="description">
+      Experience ultimate security and unrestricted access with our AI-optimized servers and advanced encryption technology.
+    </p>
+    <div class="buttons">
+      <a href="httpcustome.html" class="btn btn-primary">Http custome</a>
+      <a href="zivpn.html" class="btn btn-secondary">zivpn</a>
+    </div>
+  </section>
+
+  <section class="vpn-section">
+    <!-- Trojan VPN Card -->
+    <div class="vpn-card">
+      <div class="vpn-header">
+        <img src="https://sshocean.net/assets/images/icons/icon-trojan.svg" alt="Trojan Icon" />
+        <div class="vpn-badge">4 Servers</div>
+      </div>
+      <h3 class="vpn-title">Trojan VPN</h3>
+      <ul class="vpn-features">
+        <li>✓ More flexible in encryption</li>
+        <li>✓ Multiple protocols</li>
+        <li>✓ Unlimited Bandwidth</li>
+        <li>✓ Very Fast</li>
+      </ul>
+      <a href="trojan.html" class="vpn-button">→ Create Account</a>
+    </div>
+
+    <!-- V2Ray Vless Card -->
+    <div class="vpn-card">
+      <div class="vpn-header">
+        <img src="https://sshocean.net/assets/images/icons/icon-v2ray.svg" alt="V2Ray Icon" />
+        <div class="vpn-badge">2 Servers</div>
+      </div>
+      <h3 class="vpn-title">V2Ray Vless</h3>
+      <ul class="vpn-features">
+        <li>✓ Faster and performs better</li>
+        <li>✓ Unlimited bandwidth</li>
+        <li>✓ More flexible in encryption</li>
+        <li>✓ Multiple platforms</li>
+      </ul>
+      <a href="v2ray.html" class="vpn-button">→ Create Account</a>
+    </div>
+  </section>
+</body>
+</html>
