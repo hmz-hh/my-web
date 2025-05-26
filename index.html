@@ -4,22 +4,165 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SSHVPN</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <script>
-    (function(){
-      var _x = window.location.hostname;
-      var _y = "ssh.ha-vps.store";
-      if(_x !== _y){
-        var _z = document.querySelector('link[href="style.css"]');
-        _z && _z.parentNode.removeChild(_z);
-      }
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!--  CSS  -->
-  <link rel="stylesheet" href="style.css" />
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1e293b;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .logo span {
+      color: #facc15;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+      background: linear-gradient(to right, #0ea5e9, #2563eb);
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #fef9c3;
+      margin-bottom: 0.5rem;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      color: #f8fafc;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      margin: 0 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background-color: #facc15;
+      color: #1e293b;
+    }
+
+    .btn-secondary {
+      background-color: #38bdf8;
+      color: #0f172a;
+    }
+
+    .vpn-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 1.5rem;
+      background-color: #1e293b;
+    }
+
+    .vpn-card {
+      background-color: #334155;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .vpn-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .vpn-header img {
+      width: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .vpn-badge {
+      background-color: #facc15;
+      color: #1e293b;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .vpn-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #38bdf8;
+    }
+
+    .vpn-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .vpn-features li {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .vpn-button {
+      display: inline-block;
+      margin-top: 0.5rem;
+      text-decoration: none;
+      background-color: #0ea5e9;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .vpn-button:hover {
+      background-color: #0284c7;
+    }
+
+    @media (max-width: 768px) {
+      .vpn-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero .title {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -29,18 +172,17 @@
 
   <section class="hero">
     <div class="tagline">AI-Powered VPN Technology</div>
-    <h1 class="title">Next-Gen <span>Secure</span><br/>Tunneling Solutions</h1>
+    <h1 class="title">Next-Gen <span>Secure</span> Tunneling</h1>
     <p class="description">
       Experience ultimate security and unrestricted access with our AI-optimized servers and advanced encryption technology.
     </p>
     <div class="buttons">
-      <a href="https://t.me/free_net_mrr" class="btn btn-primary"> CHANNEL </a>
-      <a href="https://t.me/chat_free_net" class="btn btn-secondary"> CHAT </a>
+      <a href="https://t.me/free_net_mrr" class="btn-primary">CHANNEL</a>
+      <a href="https://t.me/chat_free_net" class="btn-secondary">CHAT</a>
     </div>
   </section>
 
   <section class="vpn-section">
-    <!-- SSH UDP (zivpn) -->
     <div class="vpn-card">
       <div class="vpn-header">
         <img src="https://udpcustom.online/wp-content/uploads/2024/12/image.webp" alt="SSH Icon" />
@@ -56,7 +198,6 @@
       <a href="zivpn.html" class="vpn-button">→ Create Account</a>
     </div>
 
-      <!-- V2Ray Vless Card -->
     <div class="vpn-card">
       <div class="vpn-header">
         <img src="https://sshocean.net/assets/images/icons/icon-v2ray.svg" alt="V2Ray Icon" />
@@ -72,7 +213,5 @@
       <a href="v2ray.html" class="vpn-button">→ Create Account</a>
     </div>
   </section>
-  <!--  JS  -->
-  <script src="script.js"></script>
 </body>
 </html>
