@@ -1,95 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Simple OVPN Download site -->
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SSHVPN</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- حماية خفيفة ضد نسخ CSS -->
-  <script>
-    (function(){
-      var _x = window.location.hostname;
-      var _y = "ssh.ha-vps.store";
-      if(_x !== _y){
-        var _z = document.querySelector('link[href="style.css"]');
-        _z && _z.parentNode.removeChild(_z);
-      }
-    })();
-  </script>
-
-  <!-- ملف CSS الخارجي -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <title>OVPN Config Download</title>
+    <meta name="description" content="Server" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <div class="logo">ssh<span>vpn</span></div>
-    <div class="menu-icon"></div>
-  </header>
+    <div class="container justify-content-center" style="margin-top:9em;margin-bottom:5em;">
+        <div class="col-md">
+            <div class="view"><img src="https://openvpn.net/wp-content/uploads/openvpn.jpg" class="card-img-top">
+                <div class="mask rgba-white-slight"></div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Config List</h5><br />
+                    <ul class="list-group">
 
-  <section class="hero">
-    <div class="tagline">AI-Powered VPN Technology</div>
-    <h1 class="title">Next-Gen <span>Secure</span><br/>Tunneling Solutions</h1>
-    <p class="description">
-      Experience ultimate security and unrestricted access with our AI-optimized servers and advanced encryption technology.
-    </p>
-    <div class="buttons">
-      <a href="httpcustome.html" class="btn btn-primary">Http custome</a>
-      <a href="zivpn.html" class="btn btn-secondary">zivpn</a>
+                        <li class="list-group-item justify-content-between align-items-center"
+                            style="margin-bottom:1em;">
+                            <p>TCP <span
+                                    class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small>
+                            </p><a class="btn btn-outline-success waves-effect btn-sm"
+                                href="https://xxxxxxxxx:81/tcp.ovpn" style="float:right;"><i class="fa fa-download"></i>
+                                Download</a>
+                        </li>
+
+                        <li class="list-group-item justify-content-between align-items-center"
+                            style="margin-bottom:1em;">
+                            <p>UDP <span
+                                    class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small>
+                            </p><a class="btn btn-outline-success waves-effect btn-sm"
+                                href="https://xxxxxxxxx:81/udp.ovpn" style="float:right;"><i class="fa fa-download"></i>
+                                Download</a>
+                        </li>
+
+                        <li class="list-group-item justify-content-between align-items-center"
+                            style="margin-bottom:1em;">
+                            <p>SSL <span
+                                    class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small>
+                            </p><a class="btn btn-outline-success waves-effect btn-sm"
+                                href="https://xxxxxxxxx:81/ssl.ovpn" style="float:right;"><i class="fa fa-download"></i>
+                                Download</a>
+                        </li>
+
+                        <li class="list-group-item justify-content-between align-items-center"
+                            style="margin-bottom:1em;">
+                            <p> WS SSL <span
+                                    class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small>
+                            </p><a class="btn btn-outline-success waves-effect btn-sm"
+                                href="https://xxxxxxxxx:81/ws-ssl.ovpn" style="float:right;"><i
+                                    class="fa fa-download"></i> Download</a>
+                        </li>
+
+                        <li class="list-group-item justify-content-between align-items-center"
+                            style="margin-bottom:1em;">
+                            <p> ALL.zip <span
+                                    class="badge light-blue darken-4">Android/iOS/PC/Modem</span><br /><small></small>
+                            </p><a class="btn btn-outline-success waves-effect btn-sm"
+                                href="https://xxxxxxxxx:81/all-ovpn.zip" style="float:right;"><i
+                                    class="fa fa-download"></i> Download</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
-
-  <section class="vpn-section">
-    <!-- Trojan VPN Card -->
-    <div class="vpn-card">
-      <div class="vpn-header">
-        <img src="https://sshocean.net/assets/images/icons/icon-trojan.svg" alt="Trojan Icon" />
-        <div class="vpn-badge">4 Servers</div>
-      </div>
-      <h3 class="vpn-title">Trojan VPN</h3>
-      <ul class="vpn-features">
-        <li>✓ More flexible in encryption</li>
-        <li>✓ Multiple protocols</li>
-        <li>✓ Unlimited Bandwidth</li>
-        <li>✓ Very Fast</li>
-      </ul>
-      <a href="trojan.html" class="vpn-button">→ Create Account</a>
-    </div>
-
-    <!-- V2Ray Vless Card -->
-    <div class="vpn-card">
-      <div class="vpn-header">
-        <img src="https://sshocean.net/assets/images/icons/icon-v2ray.svg" alt="V2Ray Icon" />
-        <div class="vpn-badge">2 Servers</div>
-      </div>
-      <h3 class="vpn-title">V2Ray Vless</h3>
-      <ul class="vpn-features">
-        <li>✓ Faster and performs better</li>
-        <li>✓ Unlimited bandwidth</li>
-        <li>✓ More flexible in encryption</li>
-        <li>✓ Multiple platforms</li>
-      </ul>
-      <a href="v2ray.html" class="vpn-button">→ Create Account</a>
-    </div>
-
-    <!-- SSH UDP (zivpn) -->
-    <div class="vpn-card">
-      <div class="vpn-header">
-        <img src="https://sshocean.net/assets/images/icons/icon-ssh.svg" alt="SSH Icon" />
-        <div class="vpn-badge">2 Servers</div>
-      </div>
-      <h3 class="vpn-title">SSH UDP (zivpn)</h3>
-      <ul class="vpn-features">
-        <li>✓ Simple and Secure</li>
-        <li>✓ Multiple login allowed</li>
-        <li>✓ Protocol TCP/UDP</li>
-        <li>✓ SSL/TLS support</li>
-      </ul>
-      <a href="zivpn.html" class="vpn-button">→ Create Account</a>
-    </div>
-  </section>
-
-  <!-- ملف JS الخارجي -->
-  <script src="script.js"></script>
 </body>
+
 </html>
