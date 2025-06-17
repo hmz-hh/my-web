@@ -27,6 +27,7 @@ if ! command -v bash &>/dev/null; then
     apt install bash -y
 fi
 
+clear
 echo -e "${YELLOW} Secure Access Panel${NC}"
 echo -e "${YELLOW} Script is protected by password${NC}"
 echo -e "${YELLOW} To get the password, contact here @a_hamza_i ${NC}" 
