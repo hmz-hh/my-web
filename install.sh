@@ -9,7 +9,7 @@ PANEL_PASS="hmz555"
 MAX_ATTEMPTS=15
 attempt=1
 
-ENC_LINK="U2FsdGVkX1/uMHcSuo/L4qmBiJnGqiaN71BFCE1fpB/C0BBWhrIFbI0MAZ9mjRCT9etT08O3Y5vSnH7L+Orqfg=="
+ENC_LINK="U2FsdGVkX19i0XtsKRe9El4sFiL+CY8hwpSA4DCXbjd8+/vjDFEc5Woj+xHt1S+NAt0YyGIU6znNkWYxm/OwUg=="
 
 echo -e "${YELLOW} Checking and installing required packages... ${NC}"
 if ! command -v curl &>/dev/null; then
@@ -27,10 +27,9 @@ if ! command -v bash &>/dev/null; then
     apt install bash -y
 fi
 
-clear
 echo -e "${YELLOW} Secure Access Panel${NC}"
 echo -e "${YELLOW} Script is protected by password${NC}"
-echo -e "${YELLOW} To get the password, contact here @a_hamza_i ${NC}" 
+echo -e "${YELLOW} To get the password, contact here @a_hamza_i ${NC}"
 
 while [[ $attempt -le $MAX_ATTEMPTS ]]; do
     echo -n -e "${YELLOW} Enter password to access $attempt/$MAX_ATTEMPTS): ${NC}"
@@ -61,5 +60,6 @@ if [[ -f "$SCRIPT_NAME" ]]; then
     chmod +x "$SCRIPT_NAME"
     ./"$SCRIPT_NAME"
 else
+    echo -e "${RED} Download failed. Exiting.${NC}"
     exit 1
 fi
