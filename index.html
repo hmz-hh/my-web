@@ -2,171 +2,171 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>sshvps - AI-Powered VPN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>بيع VPS - HMZ BandarVPN</title>
   <style>
-    /* Reset بسيط */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* تصميم عام */
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #ffffff;
-      color: #111827;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fc;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
     header {
-      background-color: #b91c1c; /* أحمر غامق */
+      background-color: #0077cc;
+      color: white;
       padding: 20px;
-      position: relative;
-    }
-    header .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #000;
-      display: inline-block;
-    }
-    header .logo span {
-      color: #ef4444; /* أحمر فاتح */
-    }
-    header .menu-icon {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 24px; height: 24px;
-      cursor: pointer;
-    }
-    /* Hero Section */
-    .hero {
-      background-color: #b91c1c;
-      color: #fff;
       text-align: center;
-      padding: 60px 20px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
-    .hero .tagline {
-      display: inline-block;
-      background: rgba(255,255,255,0.1);
-      padding: 5px 15px;
-      border-radius: 9999px;
-      font-size: 14px;
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.2rem;
+    }
+    .plans {
+      display: grid;
+      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .plan {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .plan:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .plan-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+    .plan-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #222;
       margin-bottom: 20px;
     }
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      opacity: 0.9;
-    }
-    .hero .btn-group a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 12px 30px;
-      border-radius: 8px;
-      font-size: 16px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: opacity 0.2s;
-    }
-    .hero .btn-primary {
-      background-color: #fff;
-      color: #b91c1c;
-    }
-    .hero .btn-primary:hover { opacity: 0.8; }
-    .hero .btn-outline {
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-    }
-    .hero .btn-outline:hover { opacity: 0.8; }
-
-    /* Card Section */
-    .card {
-      background-color: #fff;
-      max-width: 350px;
-      margin: 40px auto;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px;
-    }
-    .card-header .icon {
-      background-color: #f87171;
-      color: #fff;
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-    .card-header .badge {
-      background-color: #3b82f6;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-    }
-    .card-body {
-      padding: 0 20px 20px;
-    }
-    .card-body h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .card-body ul {
+    .plan-details {
       list-style: none;
-      margin-top: 10px;
+      padding: 0;
+      margin: 0 0 30px 0;
+      color: #555;
     }
-    .card-body ul li {
-      margin-bottom: 8px;
-      position: relative;
+    .plan-details li {
+      margin-bottom: 10px;
       padding-left: 20px;
+      position: relative;
     }
-    .card-body ul li::before {
-      content: '✓';
+    .plan-details li::before {
+      content: "✔";
       position: absolute;
       left: 0;
-      color: #10b981;
+      color: #0077cc;
+      font-weight: bold;
+    }
+    .btn-buy {
+      background-color: #0077cc;
+      border: none;
+      color: white;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-buy:hover {
+      background-color: #005fa3;
+    }
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">ssh<span>vpn</span></div>
-    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-  </header>
+<header>
+  <h1>HMZ BandarVPN - بيع VPS</h1>
+</header>
 
-  <section class="hero">
-    <div class="tagline">AI-Powered VPN Technology</div>
-    <h1>Next-Gen Secure Tunneling Solutions</h1>
-    <p>Experience ultimate security and unrestricted access with our AI-optimized servers and advanced encryption technology.</p>
-    <div class="btn-group">
-      <a href="#" class="btn-primary">CHANNEL</a>
-      <a href="#" class="btn-outline">CHAT</a>
-    </div>
-  </section>
+<main>
+  <p class="intro">
+    اختر خطة VPS التي تناسب احتياجاتك. استمتع بأداء عالي، دعم فني متواصل، وأسعار تنافسية.
+  </p>
 
-  <div class="card">
-    <div class="card-header">
-      <div class="icon">ZIV</div>
-      <div class="badge">2 Servers</div>
-    </div>
-    <div class="card-body">
-      <h2>SSH UDP (ZIVPN)</h2>
-      <ul>
-        <li>Simple and Secure</li>
-        <li>Multiple login allowed</li>
-        <li>Protocol TCP/UDP</li>
+  <section class="plans">
+
+    <article class="plan">
+      <h2 class="plan-title">VPS صغير</h2>
+      <p class="plan-price">10 $ / شهر</p>
+      <ul class="plan-details">
+        <li>1 vCPU</li>
+        <li>1 جيجابايت RAM</li>
+        <li>20 جيجابايت SSD</li>
+        <li>1 تيرابايت نقل بيانات</li>
+        <li>دعم 24/7</li>
       </ul>
-    </div>
-  </div>
+      <a href="mailto:sales@bandarvpn.cloud?subject=طلب شراء VPS صغير" class="btn-buy">اطلب الآن</a>
+    </article>
+
+    <article class="plan">
+      <h2 class="plan-title">VPS متوسط</h2>
+      <p class="plan-price">25 $ / شهر</p>
+      <ul class="plan-details">
+        <li>2 vCPU</li>
+        <li>4 جيجابايت RAM</li>
+        <li>80 جيجابايت SSD</li>
+        <li>3 تيرابايت نقل بيانات</li>
+        <li>دعم 24/7</li>
+      </ul>
+      <a href="mailto:sales@bandarvpn.cloud?subject=طلب شراء VPS متوسط" class="btn-buy">اطلب الآن</a>
+    </article>
+
+    <article class="plan">
+      <h2 class="plan-title">VPS كبير</h2>
+      <p class="plan-price">50 $ / شهر</p>
+      <ul class="plan-details">
+        <li>4 vCPU</li>
+        <li>8 جيجابايت RAM</li>
+        <li>160 جيجابايت SSD</li>
+        <li>5 تيرابايت نقل بيانات</li>
+        <li>دعم 24/7</li>
+      </ul>
+      <a href="mailto:sales@bandarvpn.cloud?subject=طلب شراء VPS كبير" class="btn-buy">اطلب الآن</a>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 HMZ BandarVPN. جميع الحقوق محفوظة.
+</footer>
 
 </body>
 </html>
