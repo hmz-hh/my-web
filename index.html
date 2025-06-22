@@ -1,115 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>SSH UDP Card</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>بيع VPS - HMZ BandarVPN</title>
   <style>
+    /* تصميم عام */
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fc;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 300px;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    .badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: red;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-    }
-
-    .icon {
-      width: 60px;
-      height: 60px;
-      background-color: #fce4e4;
-      border-radius: 12px;
-      margin: 0 auto 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .icon img {
-      width: 32px;
-      height: 32px;
-    }
-
-    h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
+      padding: 0;
       color: #333;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.2rem;
+    }
+    .plans {
+      display: grid;
+      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .plan {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .plan:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .plan-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+    .plan-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #222;
       margin-bottom: 20px;
     }
-
-    ul li {
-      margin: 6px 0;
-      font-size: 14px;
+    .plan-details {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
       color: #555;
+    }
+    .plan-details li {
+      margin-bottom: 10px;
       padding-left: 20px;
       position: relative;
     }
-
-    ul li::before {
+    .plan-details li::before {
       content: "✔";
-      color: green;
       position: absolute;
       left: 0;
-    }
-
-    .btn {
-      background-color: #e53935;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
+      color: #0077cc;
       font-weight: bold;
     }
-
-    .btn:hover {
-      background-color: #c62828;
+    .btn-buy {
+      background-color: #0077cc;
+      border: none;
+      color: white;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-buy:hover {
+      background-color: #005fa3;
+    }
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="badge">12 Servers</div>
-    <div class="icon">
-      <img src="https://sshmax.net/assets/images/icons/icon-ssh.svg" alt="SSH Icon">
-    </div>
-    <h2>SSH UDP (UDP Custom)</h2>
-    <ul>
-      <li>Simple and Secure</li>
-      <li>Multiple login allowed</li>
-      <li>Protocol TCP/UDP</li>
-      <li>SSL/TLS support</li>
-    </ul>
-    <a href="#" class="btn">Create Account</a>
-  </div>
+<header>
+  <h1>HMZ BandarVPN - بيع VPS</h1>
+</header>
+
+<main>
+  <p class="intro">
+    اختر خطة VPS التي تناسب احتياجاتك. استمتع بأداء عالي، دعم فني متواصل، وأسعار تنافسية.
+  </p>
+
+  <section class="plans">
+
+    <article class="plan">
+      <h2 class="plan-title">VPS صغير</h2>
+      <p class="plan-price">10 $ / شهر</p>
+      <ul class="plan-details">
+        <li>1 vCPU</li>
+        <li>1 جيجابايت RAM</li>
+        <li>20 جيجابايت SSD</li>
+        <li>1 تيرابايت نقل بيانات</li>
+        <li>دعم 24/7</li>
+      </ul>
+      <a href="mailto:sales@bandarvpn.cloud?subject=طلب شراء VPS صغير" class="btn-buy">اطلب الآن</a>
+    </article>
+
+    <article class="plan">
+      <h2 class="plan-title">VPS متوسط</h2>
+      <p class="plan-price">25 $ / شهر</p>
+      <ul class="plan-details">
+        <li>2 vCPU</li>
+        <li>4 جيجابايت RAM</li>
+        <li>80 جيجابايت SSD</li>
+        <li>3 تيرابايت نقل بيانات</li>
+        <li>دعم 24/7</li>
+      </ul>
+      <a href="mailto:sales@bandarvpn.cloud?subject=طلب شراء VPS متوسط" class="btn-buy">اطلب الآن</a>
+    </article>
+
+    <article class="plan">
+      <h2 class="plan-title">VPS كبير</h2>
+      <p class="plan-price">50 $ / شهر</p>
+      <ul class="plan-details">
+        <li>4 vCPU</li>
+        <li>8 جيجابايت RAM</li>
+        <li>160 جيجابايت SSD</li>
+        <li>5 تيرابايت نقل بيانات</li>
+        <li>دعم 24/7</li>
+      </ul>
+      <a href="mailto:sales@bandarvpn.cloud?subject=طلب شراء VPS كبير" class="btn-buy">اطلب الآن</a>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 HMZ BandarVPN. جميع الحقوق محفوظة.
+</footer>
 
 </body>
 </html>
