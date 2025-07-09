@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>كونفيغ مخصص :</title>
+  <title>تخصيص خطة VPS</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white p-6 font-sans">
   <div class="max-w-md mx-auto bg-gray-800 p-6 rounded-2xl shadow-lg">
     <div class="flex items-center justify-center mb-4">
-      <!-- Icon -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0L3 8.657V5h3.657l6.172 6.172a4 4 0 010 5.656z" />
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12h.01" />
       </svg>
       <h2 class="text-2xl font-bold">تخصيص خطة VPS</h2>
+    </div>
+
+    <!-- كمية الخادم -->
+    <label class="block mb-2 font-semibold">كمية الخادم</label>
+    <div class="flex items-center justify-between bg-gray-700 p-2 rounded-xl mb-4">
+      <button onclick="updateQuantity(-1)" class="bg-gray-600 hover:bg-gray-500 text-white w-8 h-8 rounded-full text-lg">-</button>
+      <span id="quantity" class="text-lg font-bold">1</span>
+      <button onclick="updateQuantity(1)" class="bg-purple-600 hover:bg-purple-700 text-white w-8 h-8 rounded-full text-lg">+</button>
     </div>
 
     <!-- مدة الاشتراك -->
@@ -44,14 +51,6 @@
       <option value="US">الولايات المتحدة</option>
     </select>
 
-    <!-- كمية الخادم -->
-    <label class="block mb-2 font-semibold">كمية الخادم</label>
-    <div class="flex items-center justify-between bg-gray-700 p-2 rounded mb-4">
-      <button onclick="updateQuantity(-1)" class="bg-gray-600 hover:bg-gray-500 text-white w-8 h-8 rounded-full text-lg">-</button>
-      <span id="quantity" class="text-lg font-bold">1</span>
-      <button onclick="updateQuantity(1)" class="bg-purple-600 hover:bg-purple-700 text-white w-8 h-8 rounded-full text-lg">+</button>
-    </div>
-
     <!-- طريقة الدفع -->
     <label class="block mb-2 font-semibold flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,12 +64,6 @@
       <option value="BARID BANK">BARID BANK</option>
     </select>
 
-    <!-- تجديد تلقائي -->
-    <div class="mb-4 flex items-center">
-      <input type="checkbox" id="autoRenew" onchange="updatePrice()" class="mr-2">
-      <label for="autoRenew" class="font-semibold">تجديد عند انتهاء الصلاحية</label>
-    </div>
-
     <!-- الثمن النهائي -->
     <div class="mb-4 text-xl flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,10 +74,10 @@
     </div>
 
     <!-- أزرار -->
-    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-xl text-lg">
+    <button onclick="window.location.href='https://www.ssshamza.com'" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-xl text-lg">
       الدفع بالكامل
     </button>
-    <button class="w-full mt-3 text-purple-400 hover:text-purple-500 font-semibold text-sm">
+    <button onclick="window.location.href='/'" class="w-full mt-3 text-purple-400 hover:text-purple-500 font-semibold text-sm">
       إلغاء
     </button>
   </div>
@@ -92,7 +85,6 @@
   <script>
     function updatePrice() {
       const daySelect = document.getElementById("days");
-      const autoRenew = document.getElementById("autoRenew").checked;
       const quantity = parseInt(document.getElementById("quantity").textContent);
       const priceDisplay = document.getElementById("price");
 
@@ -102,8 +94,6 @@
       if (selectedDays === 30) basePrice = 20;
       else if (selectedDays === 60) basePrice = 35;
       else if (selectedDays === 90) basePrice = 45;
-
-      if (autoRenew) basePrice += 10;
 
       let total = basePrice * quantity;
       priceDisplay.textContent = total.toFixed(2) + " درهم";
@@ -117,7 +107,7 @@
       updatePrice();
     }
 
-    updatePrice(); // تحديث أولي
+    updatePrice();
   </script>
 </body>
-</html>
+  </html>
