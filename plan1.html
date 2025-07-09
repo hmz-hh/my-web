@@ -1,43 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Customize VPS Plan</title>
+  <title>تخصيص خطة VPS</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white p-6 font-sans">
   <div class="max-w-md mx-auto bg-gray-800 p-6 rounded-2xl shadow-lg">
-    <h2 class="text-2xl font-bold mb-4 text-center">🛠️ Customize Your VPS</h2>
-    
-    <!-- Days Selection -->
-    <label class="block mb-2 font-semibold">📅 مدة الإشتراك:</label>
+    <div class="flex items-center justify-center mb-4">
+      <!-- Icon: Wrench -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0L3 8.657V5h3.657l6.172 6.172a4 4 0 010 5.656z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12h.01" />
+      </svg>
+      <h2 class="text-2xl font-bold">تخصيص خطة VPS</h2>
+    </div>
+
+    <!-- مدة الاشتراك -->
+    <label class="block mb-2 font-semibold flex items-center">
+      <!-- Icon: Calendar -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      مدة الإشتراك:
+    </label>
     <select id="days" onchange="updatePrice()" class="w-full p-2 mb-4 rounded bg-gray-700 text-white">
       <option value="30" selected>30 يوم</option>
       <option value="60">60 يوم</option>
       <option value="90">90 يوم</option>
     </select>
 
-    <!-- Payment Method -->
-    <label class="block mb-2 font-semibold">💳 طريقة الدفع:</label>
+    <!-- طريقة الدفع -->
+    <label class="block mb-2 font-semibold flex items-center">
+      <!-- Icon: Credit Card -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 6h18a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2z" />
+      </svg>
+      طريقة الدفع:
+    </label>
     <select id="payment" class="w-full p-2 mb-4 rounded bg-gray-700 text-white">
       <option value="CIH">CIH</option>
       <option value="CACH PLUS">CACHPLUS</option>
       <option value="BARID BANK">BARID BANK</option>
     </select>
 
-    <!-- Auto Renew -->
+    <!-- تجديد تلقائي -->
     <div class="mb-4 flex items-center">
       <input type="checkbox" id="autoRenew" onchange="updatePrice()" class="mr-2">
-      <label for="autoRenew" class="font-semibold">تجديد عند انتهاء الصلاحية </label>
+      <label for="autoRenew" class="font-semibold">تجديد عند انتهاء الصلاحية</label>
     </div>
 
-    <!-- Final Price -->
-    <div class="mb-4 text-xl">
-      💰 <strong>الثمن النهائي:</strong> <span id="price" class="text-yellow-400">20DH</span>
+    <!-- الثمن النهائي -->
+    <div class="mb-4 text-xl flex items-center">
+      <!-- Icon: Currency -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v8m0 0v2m0-10V4" />
+      </svg>
+      <strong>الثمن النهائي:</strong>
+      <span id="price" class="text-yellow-400 ml-2">20 درهم</span>
     </div>
 
-    <!-- Button -->
+    <!-- زر الشراء -->
     <button class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 px-4 rounded-xl">
       إشتر الآن
     </button>
@@ -58,10 +82,10 @@
 
       if (autoRenew) basePrice += 10;
 
-      priceDisplay.textContent = basePrice.toFixed(2) + "ددرهم;
+      priceDisplay.textContent = basePrice.toFixed(2) + " درهم";
     }
 
-    updatePrice(); // Run on load
+    updatePrice(); // تحديث أولي
   </script>
 </body>
-</html>
+  </html>
