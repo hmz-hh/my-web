@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white p-6 font-sans">
-  <div class="max-w-md mx-auto bg-gray-800 p-6 rounded-2xl shadow-lg">
+  <div class="max-w-md mx-auto bg-gray-800 p-6 rounded-2xl shadow-lg" style="transform: scaleX(1.05) scaleY(0.90);">
     <div class="flex items-center justify-center mb-4">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0L3 8.657V5h3.657l6.172 6.172a4 4 0 010 5.656z" />
@@ -17,8 +17,8 @@
     </div>
 
     <!-- كمية الخادم -->
-    <label class="block mb-2 font-semibold">كمية الخادم : </label>
-    <div class="flex items-center justify-between bg-gray-700 p-2 rounded-xl mb-4">
+    <label class="block mb-2 font-semibold">كمية الكونفيغ :</label>
+    <div class="flex items-center justify-between bg-gray-700 p-2 rounded-xl mb-4 border border-purple-500">
       <button onclick="updateQuantity(-1)" class="bg-gray-600 hover:bg-gray-500 text-white w-8 h-8 rounded-full text-lg">-</button>
       <span id="quantity" class="text-lg font-bold">1</span>
       <button onclick="updateQuantity(1)" class="bg-purple-600 hover:bg-purple-700 text-white w-8 h-8 rounded-full text-lg">+</button>
@@ -68,7 +68,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v8m0 0v2m0-10V4" />
       </svg>
-      <strong> الثمن النهائي : </strong>
+      <strong>الثمن النهائي :</strong>
       <span id="price" class="text-yellow-400 ml-2">20.00 درهم</span>
     </div>
 
@@ -109,4 +109,4 @@
     updatePrice();
   </script>
 </body>
-  </html>
+</html>
