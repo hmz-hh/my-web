@@ -3,52 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>اشتراك مجاني</title>
+  <title>سيرفرات مجانية</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white font-sans p-6">
+<body class="bg-gray-950 text-white font-sans p-6">
 
-  <h2 class="text-4xl font-bold text-green-400 text-center mb-8">🆓 اشتراك مجاني</h2>
+  <h2 class="text-4xl font-bold text-green-400 text-center mb-8">🆓 السيرفرات المجانية</h2>
 
-  <div class="overflow-x-auto scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-gray-700 mb-8">
-    <div class="flex space-x-6 rtl:space-x-reverse px-2">
+  <div class="space-y-6 max-w-2xl mx-auto">
 
-      <!-- بطاقة مجانية 1 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-3">SSH مجاني</h3>
-        <p class="text-2xl font-bold text-green-300 mb-2">3GB / SSH</p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ سرعة محدودة</li>
-          <li>✅ 3GB شهري</li>
-          <li>✅ يدوم 7 أيام</li>
-        </ul>
-        <a href="https://t.me/yourfreebot" class="block w-full bg-green-400 hover:bg-green-300 text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
-      <!-- بطاقة مجانية 2 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-3">V2RAY مجاني</h3>
-        <p class="text-2xl font-bold text-green-300 mb-2">5GB / V2RAY</p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ Vmess فقط</li>
-          <li>✅ سرعة محدودة</li>
-          <li>✅ يدوم 7 أيام</li>
-        </ul>
-        <a href="https://t.me/yourfreebot" class="block w-full bg-green-400 hover:bg-green-300 text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
+    <!-- سيرفر 1 -->
+    <div class="bg-gray-800 border border-green-500 rounded-xl p-5 shadow-lg">
+      <h3 class="text-2xl font-bold text-green-300 mb-2">SSH مجاني - INWI</h3>
+      <p class="text-sm text-gray-300 mb-3">صلاحية: 7 أيام — 3GB</p>
+      <ul class="text-sm space-y-1 mb-4">
+        <li>✅ بروتوكول SSH</li>
+        <li>✅ سرعة محدودة</li>
+        <li>✅ متوافق مع Termux و HTTP Injector</li>
+      </ul>
+      <a href="https://t.me/yourfreebot" class="inline-block bg-green-400 hover:bg-green-300 text-black font-bold py-2 px-4 rounded-xl">احصل عليه الآن</a>
     </div>
+
+    <!-- سيرفر 2 -->
+    <div class="bg-gray-800 border border-green-500 rounded-xl p-5 shadow-lg">
+      <h3 class="text-2xl font-bold text-green-300 mb-2">V2RAY مجاني - IAM</h3>
+      <p class="text-sm text-gray-300 mb-3">صلاحية: 5 أيام — 5GB</p>
+      <ul class="text-sm space-y-1 mb-4">
+        <li>✅ Vmess فقط</li>
+        <li>✅ WebSocket</li>
+        <li>✅ متوافق مع V2rayN و NapsternetV</li>
+      </ul>
+      <a href="https://t.me/yourfreebot" class="inline-block bg-green-400 hover:bg-green-300 text-black font-bold py-2 px-4 rounded-xl">احصل عليه الآن</a>
+    </div>
+
+    <!-- سيرفر 3 -->
+    <div class="bg-gray-800 border border-green-500 rounded-xl p-5 shadow-lg">
+      <h3 class="text-2xl font-bold text-green-300 mb-2">OpenVPN مجاني - Orange</h3>
+      <p class="text-sm text-gray-300 mb-3">صلاحية: 3 أيام — 2GB</p>
+      <ul class="text-sm space-y-1 mb-4">
+        <li>✅ بروتوكول OVPN</li>
+        <li>✅ سرعة منخفضة</li>
+        <li>✅ يدعم مختلف الأنظمة</li>
+      </ul>
+      <a href="https://t.me/yourfreebot" class="inline-block bg-green-400 hover:bg-green-300 text-black font-bold py-2 px-4 rounded-xl">احصل عليه الآن</a>
+    </div>
+
   </div>
 
-  <!-- زر تحويل إلى VIP -->
-  <div class="text-center mt-8">
-    <a href="vip.html" class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl text-lg transition">
-      ✨ اشترك في VIP للاستفادة أكثر
+  <!-- زر التوجه إلى VIP -->
+  <div class="text-center mt-10">
+    <a href="vip.html" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl text-lg transition">
+      🚀 انتقل إلى VIP واستمتع بسرعة أفضل
     </a>
   </div>
 
   <!-- Footer -->
-  <footer class="text-center text-gray-400 py-6 border-t border-gray-700 mt-10">
+  <footer class="text-center text-gray-400 py-6 border-t border-gray-700 mt-12">
     © 2025 VPS Market. جميع الحقوق محفوظة.
   </footer>
 
