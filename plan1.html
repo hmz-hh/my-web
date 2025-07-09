@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customize VPS Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-6 font-sans">
+  <div class="max-w-md mx-auto bg-gray-800 p-6 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-bold mb-4 text-center">🛠️ Customize Your VPS</h2>
+    <!-- Days Selection -->
+    <label class="block mb-2 font-semibold">📅 Subscription Duration:</label>
+    <select id="days" onchange="updatePrice()" class="w-full p-2 mb-4 rounded bg-gray-700 text-white">
+      <option value="7">7 Days</option>
+      <option value="15">15 Days</option>
+      <option value="30" selected>30 Days</option>
+      <option value="90">90 Days</option>
+    </select>
+    <!-- Payment Method -->
+    <label class="block mb-2 font-semibold">💳 Payment Method:</label>
+    <select id="payment" class="w-full p-2 mb-4 rounded bg-gray-700 text-white">
+      <option value="paypal">PayPal</option>
+      <option value="crypto">Crypto</option>
+      <option value="card">Credit Card</option>
+    </select>
+    <!-- Auto Renew -->
+    <div class="mb-4 flex items-center">
+      <input type="checkbox" id="autoRenew" onchange="updatePrice()" class="mr-2">
+      <label for="autoRenew" class="font-semibold">🔁 Auto Renewal (+€1)</label>
+    </div>
+    <!-- Final Price -->
+    <div class="mb-4 text-xl">
+      💰 <strong>Total Price:</strong> <span id="price" class="text-yellow-400">€2.99</span>
+    </div>
+    <!-- Button -->
+    <button class="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 px-4 rounded-xl">
+      Buy Now
+    </button>
+  </div>
+  <script>
+    function updatePrice() {
+      const baseMonthly = 2.99;
+      const selectedDays = parseInt(document.getElementById("days").value);
+      const autoRenew = document.getElementById("autoRenew").checked;
+      // Calculate daily price
+      const pricePerDay = baseMonthly / 30;
+      let total = pricePerDay * selectedDays;
+      if (autoRenew) total += 1.00;
+      document.getElementById("price").textContent = "€" + total.toFixed(2);
+    }
+    // Initial price update
+    updatePrice();
+  </script>
+</body>
+</html>
