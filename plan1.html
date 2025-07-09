@@ -20,14 +20,14 @@
     <!-- Payment Method -->
     <label class="block mb-2 font-semibold">💳 Payment Method:</label>
     <select id="payment" class="w-full p-2 mb-4 rounded bg-gray-700 text-white">
-      <option value="paypal">PayPal</option>
-      <option value="crypto">Crypto</option>
-      <option value="card">Credit Card</option>
+      <option value="CIH">CIH</option>
+      <option value="CACH PLUS">CACHPLUS</option>
+      <option value="BARID BANK">BARID BANK</option>
     </select>
     <!-- Auto Renew -->
     <div class="mb-4 flex items-center">
       <input type="checkbox" id="autoRenew" onchange="updatePrice()" class="mr-2">
-      <label for="autoRenew" class="font-semibold">🔁 Auto Renewal (+€1)</label>
+      <label for="autoRenew" class="font-semibold">تجديد عند انتهاء الصلاحية </label>
     </div>
     <!-- Final Price -->
     <div class="mb-4 text-xl">
@@ -40,7 +40,7 @@
   </div>
   <script>
     function updatePrice() {
-      const baseMonthly = 2.99;
+      const baseMonthly = 20DH;
       const selectedDays = parseInt(document.getElementById("days").value);
       const autoRenew = document.getElementById("autoRenew").checked;
       // Calculate daily price
