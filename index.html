@@ -1,133 +1,247 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>خطط</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عروض الكونفيغ 🔥</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px 15px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff4081;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      background: #1e1e1e;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .section {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 64, 129, 0.2);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #03dac6;
+      border-bottom: 1px solid #333;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .price-item {
+      background: #2a2a2a;
+      border-radius: 8px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-right: 5px solid #ff4081;
+    }
+
+    .price-duration {
+      font-size: 14px;
+    }
+
+    .price-amount {
+      color: #ffeb3b;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .buy-btn {
+      background: linear-gradient(45deg, #00F5FF, #B721FF);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background: linear-gradient(45deg, #B721FF, #FF3D9A);
+    }
+
+    .contact {
+      background: #2e2e2e;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .contact a {
+      color: #03a9f4;
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .section h2 {
+        font-size: 18px;
+      }
+
+      .price-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .buy-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans p-6">
+<body>
 
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-8">اختر خطة</h2>
+<div class="container">
+  <h1>كونفيغ ناضي بلا تقطاع 🚀</h1>
 
-  <!-- البطاقات -->
-  <div class="overflow-x-auto scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-gray-700">
-    <div class="flex space-x-6 rtl:space-x-reverse px-2">
+  <div class="intro">
+    بغيتي كونفيغ سريع؟ كيدعم الألعاب؟ بلا مشاكل؟ بوحدك؟<br>
+    هاد الخدمة ديال بصّاح 🔥
+  </div>
 
-      <!-- بطاقة 1 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 transition-transform relative">
-        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH UDP</div>
-        <h3 class="text-xl font-semibold mb-3">WIN 0DH</h3>
-        <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ 3 ميجا سرعة</li>
-          <li>✅ SSH فقط</li>
-          <li>✅ 5GB شهري</li>
-        </ul>
-        <a href="free1" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
-      <!-- بطاقة 2 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 transition-transform relative">
-        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH WS</div>
-        <h3 class="text-xl font-semibold mb-3">INWI *6</h3>
-        <p class="text-3xl font-bold text-green-300 mb-2">15DH<span class="text-sm text-gray-300"> /شهر</span></p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ بروتوكول OpenVPN</li>
-          <li>✅ 4 ميجا سرعة</li>
-          <li>✅ 7GB شهري</li>
-        </ul>
-        <a href="free2" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
-      <!-- بطاقة 3 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 transition-transform relative">
-        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">V2RAY/SSH</div>
-        <h3 class="text-xl font-semibold mb-3">Free V2ray</h3>
-        <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ دعم Vmess & Vless</li>
-          <li>✅ سرعة عادية</li>
-          <li>✅ 10GB شهري</li>
-        </ul>
-        <a href="free3" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
+  <!-- Inwi -->
+  <div class="section">
+    <h2>🔹 كونفيغ انوي *6 (بينج 90)</h2>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 15 يوم</span>
+      <span class="price-amount">10 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20انوي%2015%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
+      <span class="price-amount">15 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20انوي%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
+      <span class="price-amount">30 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20انوي%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
     </div>
   </div>
 
-  <!-- الفاصل بين مجموعتي البطاقات -->
-  <div class="my-8 text-center">
-    <div class="inline-block h-1 w-24 bg-green-500 rounded-full"></div>
-    <div class="inline-block h-1 w-24 bg-green-400 rounded-full mx-2"></div>
-    <div class="inline-block h-1 w-24 bg-green-300 rounded-full"></div>
-  </div>
-
-  <!-- البطاقات -->
-  <div class="overflow-x-auto scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-gray-700">
-    <div class="flex space-x-6 rtl:space-x-reverse px-2">
-
-      <!-- بطاقة 1 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 transition-transform relative">
-        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH UDP</div>
-        <h3 class="text-xl font-semibold mb-3">WIN 0DH</h3>
-        <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ 3 ميجا سرعة</li>
-          <li>✅ SSH فقط</li>
-          <li>✅ 5GB شهري</li>
-        </ul>
-        <a href="free1" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
-      <!-- بطاقة 2 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 transition-transform relative">
-        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH WS</div>
-        <h3 class="text-xl font-semibold mb-3">INWI *6</h3>
-        <p class="text-3xl font-bold text-green-300 mb-2">15DH<span class="text-sm text-gray-300"> /شهر</span></p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ بروتوكول OpenVPN</li>
-          <li>✅ 4 ميجا سرعة</li>
-          <li>✅ 7GB شهري</li>
-        </ul>
-        <a href="free2" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
-      <!-- بطاقة 3 -->
-      <div class="min-w-[280px] bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 flex-shrink-0 transition-transform relative">
-        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">V2RAY/SSH</div>
-        <h3 class="text-xl font-semibold mb-3">Free V2ray</h3>
-        <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
-        <ul class="mb-4 space-y-1 text-sm">
-          <li>✅ دعم Vmess & Vless</li>
-          <li>✅ سرعة عادية</li>
-          <li>✅ 10GB شهري</li>
-        </ul>
-        <a href="free3" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
-      </div>
-
+  <!-- Win 0 -->
+  <div class="section">
+    <h2>🔹 كونفيغ وين 0 درهم (بينج 74)</h2>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 15 يوم</span>
+      <span class="price-amount">15 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20وين%200%20درهم%2015%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
+      <span class="price-amount">20 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20وين%200%20درهم%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
+      <span class="price-amount">35 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20وين%200%20درهم%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
     </div>
   </div>
 
-  <!-- طرق الدفع -->
-  <section class="mt-12 max-w-xl mx-auto text-center">
-    <h3 class="text-2xl font-bold text-yellow-400 mb-4">طرق الدفع المتاحة</h3>
-    <p class="mb-6 text-gray-300">
-      يمكنك الدفع باستخدام CIH، CACH PLUS، BARID BANK. جميع طرق الدفع آمنة وسريعة لضمان راحتك.
-    </p>
-    <a href="https://t.me/free_net_mrr/878" target="_blank" rel="noopener"
-       class="inline-flex items-center bg-purple-600 hover:bg-purple-700 active:scale-95 active:bg-purple-800 text-white font-bold py-3 px-6 rounded-xl text-lg transform transition duration-150 ease-in-out">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-      معرفة المزيد
-    </a>
-  </section>
+  <!-- اتصالات -->
+  <div class="section">
+    <h2>🔹 كونفيغ اتصالات *6 (بينج 60)</h2>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 15 يوم</span>
+      <span class="price-amount">15 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20اتصالات%2015%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
+      <span class="price-amount">20 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20اتصالات%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
+      <span class="price-amount">35 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20اتصالات%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer class="text-center text-gray-400 py-6 mt-12 border-t border-gray-700">
-    © 2025 hamza Market. All rights reserved
-  </footer>
+  <!-- ZIVPN -->
+  <div class="section">
+    <h2>🔹 كونفيغ ZIVPN (وين 0 درهم)</h2>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
+      <span class="price-amount">25 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20ZIVPN%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
+      <span class="price-amount">45 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20ZIVPN%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+    <div class="price-item">
+      <span class="price-duration"><i class="far fa-calendar-check"></i> 90 يوم</span>
+      <span class="price-amount">60 دراهم</span>
+      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20ZIVPN%2090%20يوم" class="buy-btn" target="_blank">شراء</a>
+    </div>
+  </div>
+
+  <!-- iPhone -->
+  <div class="section">
+    <h2>🔹 متوفر حتى لآيفون (NPV TUNNEL) 🎉</h2>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact">
+    <p><strong>طرق الدفع:</strong> تعبئة انوي / كاش بلوس / السياش 💳</p>
+    <a href="https://wa.me/212690068362" target="_blank">🟢 تواصل عبر واتساب</a>
+    <a href="https://t.me/serviice_c_vip" target="_blank">🔵 تواصل عبر تيليجرام</a>
+    <a href="https://t.me/v_e_r_f_y" target="_blank">📣 آراء الزبناء</a>
+  </div>
+
+  <div class="footer">
+    © 2025 جميع الحقوق محفوظة - خدمة كونفيغ ناضي
+  </div>
+</div>
 
 </body>
 </html>
