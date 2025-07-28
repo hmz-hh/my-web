@@ -1,121 +1,162 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>اشتراكات الكونفيغ</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمة كونفيغ سريع للألعاب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e74c3c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .offer {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #e74c3c;
+        }
+        .offer-title {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .price {
+            background-color: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .feature {
+            margin: 5px 0;
+            padding-right: 15px;
+            position: relative;
+        }
+        .feature:before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            right: 0;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        .whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .telegram {
+            background-color: #0088cc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .reviews {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .reviews a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .payment {
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .emoji {
+            font-size: 20px;
+        }
+    </style>
 </head>
-<body class="bg-gray-950 text-white font-sans px-4 py-10">
-
-  <header class="text-center mb-10">
-    <h1 class="text-4xl font-extrabold text-yellow-400">اشترِ كونفيغ ناري 🔥</h1>
-    <p class="text-lg text-gray-400 mt-2">
-      أسرع اتصال، أقل بينج، دعم للألعاب، واستقرار مضمون!
-    </p>
-  </header>
-
-  <!-- Container -->
-  <div class="max-w-7xl mx-auto space-y-12">
-
-    <!-- INWI Config -->
-    <section>
-      <h2 class="text-2xl font-bold text-green-400 mb-6">🔰 كونفيغ INWI *6 - بينج 90</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-gray-900 hover:bg-green-900 transition rounded-2xl p-6 shadow-lg border border-green-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">15 يوم</h3>
-          <p class="text-lg">10 دراهم 💰 ✅</p>
+<body>
+    <div class="container">
+        <h1>بغيتي كونفيغ سريع؟ بدون تقطعات ومشاكل؟ <span class="emoji">🔥</span></h1>
+        
+        <div class="offer">
+            <div class="offer-title">كونفيغ ديال انوي *6 <span class="emoji">🚀</span></div>
+            <div class="feature">كيدعم العاب بينج 90</div>
+            <div class="feature">اشتراك 15 يوم = <span class="price">10 دراهم</span></div>
+            <div class="feature">اشتراك 30 يوم = <span class="price">15 دراهم</span></div>
+            <div class="feature">اشتراك 60 يوم = <span class="price">30 دراهم</span></div>
         </div>
-        <div class="bg-gray-900 hover:bg-green-900 transition rounded-2xl p-6 shadow-lg border border-green-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">30 يوم</h3>
-          <p class="text-lg">15 دراهم 💰 ✅</p>
+        
+        <div class="offer">
+            <div class="offer-title">كونفيغ وين 0 درهم <span class="emoji">🚀</span></div>
+            <div class="feature">كيدعم العاب بينج 74</div>
+            <div class="feature">اشتراك 15 يوم = <span class="price">15 دراهم</span></div>
+            <div class="feature">اشتراك 30 يوم = <span class="price">20 دراهم</span></div>
+            <div class="feature">اشتراك 60 يوم = <span class="price">35 دراهم</span></div>
         </div>
-        <div class="bg-gray-900 hover:bg-green-900 transition rounded-2xl p-6 shadow-lg border border-green-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">60 يوم</h3>
-          <p class="text-lg">30 دراهم 💰 ✅</p>
+        
+        <div class="offer">
+            <div class="offer-title">كونفيغ اتصلات *6 <span class="emoji">🚀</span></div>
+            <div class="feature">كيدعم العاب بينج 60</div>
+            <div class="feature">اشتراك 15 يوم = <span class="price">15 دراهم</span></div>
+            <div class="feature">اشتراك 30 يوم = <span class="price">20 دراهم</span></div>
+            <div class="feature">اشتراك 60 يوم = <span class="price">35 دراهم</span></div>
         </div>
-      </div>
-    </section>
-
-    <!-- WIN Config -->
-    <section>
-      <h2 class="text-2xl font-bold text-purple-400 mb-6">🔰 كونفيغ WIN 0DH - بينج 74</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-gray-900 hover:bg-purple-900 transition rounded-2xl p-6 shadow-lg border border-purple-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">15 يوم</h3>
-          <p class="text-lg">15 دراهم 💰 ✅</p>
+        
+        <div class="offer">
+            <div class="offer-title">كونفيغ ديال وين 0 درهم لتطبيق ZIVPN <span class="emoji">🚀</span></div>
+            <div class="feature">اشتراك 30 يوم = <span class="price">25 دراهم</span></div>
+            <div class="feature">اشتراك 60 يوم = <span class="price">45 دراهم</span></div>
+            <div class="feature">اشتراك 30 يوم = <span class="price">60 دراهم</span></div>
         </div>
-        <div class="bg-gray-900 hover:bg-purple-900 transition rounded-2xl p-6 shadow-lg border border-purple-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">30 يوم</h3>
-          <p class="text-lg">20 دراهم 💰 ✅</p>
+        
+        <div class="feature" style="text-align: center; margin-top: 20px;">
+            متوفر حتى ديال ايفون (NPV TUNNEL) <span class="emoji">🎉</span>
         </div>
-        <div class="bg-gray-900 hover:bg-purple-900 transition rounded-2xl p-6 shadow-lg border border-purple-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">60 يوم</h3>
-          <p class="text-lg">35 دراهم 💰 ✅</p>
+        
+        <div class="payment">
+            طرق الدفع: تعبئة انوي / كاش بلوس / سياش <span class="emoji">💳</span>
         </div>
-      </div>
-    </section>
-
-    <!-- IAM Config -->
-    <section>
-      <h2 class="text-2xl font-bold text-blue-400 mb-6">🔰 كونفيغ اتصالات *6 - بينج 60</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-gray-900 hover:bg-blue-900 transition rounded-2xl p-6 shadow-lg border border-blue-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">15 يوم</h3>
-          <p class="text-lg">15 دراهم 💰 ✅</p>
+        
+        <div class="contact">
+            <div style="margin-bottom: 15px; font-weight: bold;">بغيتي تشري؟ تواصل هنا <span class="emoji">🔥 🚀</span></div>
+            <a href="https://wa.me/212690068362" class="whatsapp">🟢 وتساب: wa.me/212690068362</a>
+            <a href="https://t.me/serviice_c_vip" class="telegram">🔵 تيليجرام: t.me/serviice_c_vip</a>
         </div>
-        <div class="bg-gray-900 hover:bg-blue-900 transition rounded-2xl p-6 shadow-lg border border-blue-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">30 يوم</h3>
-          <p class="text-lg">20 دراهم 💰 ✅</p>
+        
+        <div class="reviews">
+            الرأي ديال الناس: <a href="https://t.me/v_e_r_f_y">https://t.me/v_e_r_f_y</a> <span class="emoji">🥇</span>
         </div>
-        <div class="bg-gray-900 hover:bg-blue-900 transition rounded-2xl p-6 shadow-lg border border-blue-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">60 يوم</h3>
-          <p class="text-lg">35 دراهم 💰 ✅</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ZIVPN -->
-    <section>
-      <h2 class="text-2xl font-bold text-pink-400 mb-6">🔰 ZIVPN - WIN 0DH</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-gray-900 hover:bg-pink-900 transition rounded-2xl p-6 shadow-lg border border-pink-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">30 يوم</h3>
-          <p class="text-lg">25 دراهم 💰 ✅</p>
-        </div>
-        <div class="bg-gray-900 hover:bg-pink-900 transition rounded-2xl p-6 shadow-lg border border-pink-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">60 يوم</h3>
-          <p class="text-lg">45 دراهم 💰 ✅</p>
-        </div>
-        <div class="bg-gray-900 hover:bg-pink-900 transition rounded-2xl p-6 shadow-lg border border-pink-500">
-          <h3 class="text-xl font-bold text-yellow-300 mb-2">90 يوم</h3>
-          <p class="text-lg">60 دراهم 💰 ✅</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- iPhone Note -->
-    <div class="text-center text-lg text-white mt-10">
-      متوفر أيضا على <span class="text-yellow-300 font-bold">iPhone (NPV Tunnel)</span> 🎉
     </div>
-
-    <!-- Payment Methods -->
-    <div class="text-center text-gray-400 text-md mt-6">
-      طرق الدفع: تعبئة INWI / كاش بلوس / CIH 💳
-    </div>
-
-    <!-- Contact Info -->
-    <div class="text-center mt-8 text-lg space-y-2">
-      <p class="font-bold text-white">بغيتي تشري؟ تواصل معنا مباشرة:</p>
-      <p>🟢 <a href="https://wa.me/212690068362" class="text-green-400 hover:underline">واتساب</a></p>
-      <p>🔵 <a href="https://t.me/serviice_c_vip" class="text-blue-400 hover:underline">تيليجرام</a></p>
-      <p>🥇 <a href="https://t.me/v_e_r_f_y" class="text-yellow-400 hover:underline">آراء العملاء</a></p>
-    </div>
-
-    <footer class="text-center text-gray-500 mt-12 py-6 border-t border-gray-800">
-      جميع الحقوق محفوظة © 2025 - خدمتكم راحتنا
-    </footer>
-
-  </div>
 </body>
 </html>
