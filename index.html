@@ -1,121 +1,560 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>خدمة الكونفيغ</title>
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #f2f2f2;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      margin-top: 40px;
-    }
-    h1 {
-      text-align: center;
-      color: #e91e63;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
-    .section h2 {
-      color: #3f51b5;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
-    .plan {
-      background: #fafafa;
-      padding: 10px 15px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      border-left: 5px solid #4caf50;
-    }
-    .plan strong {
-      color: #009688;
-    }
-    .contact {
-      background: #e0f7fa;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .contact a {
-      display: block;
-      color: #00796b;
-      margin: 5px 0;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 14px;
-      color: #999;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كونفيغ VIP - أسرع اتصال للألعاب | بينج منخفض</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-blue: #00F5FF;
+            --electric-purple: #B721FF;
+            --vivid-pink: #FF3D9A;
+            --cyber-yellow: #FFD300;
+            --dark-space: #0F0F1E;
+            --pure-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--dark-space);
+            color: var(--pure-white);
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(183, 33, 255, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 245, 255, 0.15) 0%, transparent 25%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glowing-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .circle-1 {
+            background: var(--electric-purple);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .circle-2 {
+            background: var(--neon-blue);
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .slogan {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            z-index: -1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+        
+        .plans-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--electric-purple));
+            border-radius: 3px;
+        }
+        
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .plan-card {
+            background: rgba(15, 15, 30, 0.8);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .plan-card.popular {
+            border: 2px solid var(--cyber-yellow);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--cyber-yellow);
+            color: var(--dark-space);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .plan-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(183, 33, 255, 0.2));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .plan-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(183, 33, 255, 0.1));
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .plan-ping {
+            display: inline-block;
+            background: rgba(0, 245, 255, 0.2);
+            color: var(--neon-blue);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .plan-price-list {
+            padding: 1.5rem;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price-duration {
+            font-weight: 500;
+        }
+        
+        .price-amount {
+            background: linear-gradient(45deg, var(--vivid-pink), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .contact-section {
+            background: rgba(15, 15, 30, 0.8);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(183, 33, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            z-index: -1;
+            transition: opacity 0.3s;
+            opacity: 1;
+        }
+        
+        .contact-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--electric-purple), var(--vivid-pink));
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 245, 255, 0.3);
+        }
+        
+        .contact-btn:hover::before {
+            opacity: 0;
+        }
+        
+        .contact-btn:hover::after {
+            opacity: 1;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .payment-icon {
+            font-size: 1.2rem;
+            color: var(--cyber-yellow);
+        }
+        
+        .reviews-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .reviews-link:hover {
+            color: var(--vivid-pink);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+            
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>كونفيغ ناضي 🔥</h1>
-    
-    <div class="section">
-      <p>‌‌‌بغيتي كونفيغ سريع ؟ بدون تقطعات ومشاكل ؟ كيدعم الألعاب ؟ تخدم بيه بوحدك ؟ بسرعة مزيانة ؟</p>
-      <p>كنوفرو ليك اشتراك ديال كونفيغ ناضي وخاص 🚀</p>
+    <div class="container">
+        <div class="glowing-circle circle-1"></div>
+        <div class="glowing-circle circle-2"></div>
+        
+        <header>
+            <div class="logo">كونفيغ VIP</div>
+            <p class="slogan">أسرع اتصال للألعاب بدون تقطيع وبينج منخفض</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3 class="feature-title">سرعة فائقة</h3>
+                    <p class="feature-desc">اتصال سريع بدون تقطيع أو تقطعات مزعجة</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3 class="feature-title">مخصص للألعاب</h3>
+                    <p class="feature-desc">بينج منخفض يضمن لك تجربة لعب سلسة</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="feature-title">حماية كاملة</h3>
+                    <p class="feature-desc">أمان عالي وحماية لبياناتك</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="feature-title">دعم فني</h3>
+                    <p class="feature-desc">دعم فني متواصل لحل أي مشكلة تواجهك</p>
+                </div>
+            </div>
+        </header>
+        
+        <div class="plans-section">
+            <h2 class="section-title">باقات الاشتراكات</h2>
+            
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">كونفيغ انوي *6</h3>
+                        <span class="plan-ping">بينج 90</span>
+                    </div>
+                    <div class="plan-price-list">
+                        <div class="price-item">
+                            <span class="price-duration">15 يوم</span>
+                            <span class="price-amount">10 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">30 يوم</span>
+                            <span class="price-amount">15 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">60 يوم</span>
+                            <span class="price-amount">30 دراهم</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plan-card popular">
+                    <div class="popular-badge">الأكثر طلباً</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">كونفيغ وين 0 درهم</h3>
+                        <span class="plan-ping">بينج 74</span>
+                    </div>
+                    <div class="plan-price-list">
+                        <div class="price-item">
+                            <span class="price-duration">15 يوم</span>
+                            <span class="price-amount">15 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">30 يوم</span>
+                            <span class="price-amount">20 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">60 يوم</span>
+                            <span class="price-amount">35 دراهم</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">كونفيغ اتصلات *6</h3>
+                        <span class="plan-ping">بينج 60</span>
+                    </div>
+                    <div class="plan-price-list">
+                        <div class="price-item">
+                            <span class="price-duration">15 يوم</span>
+                            <span class="price-amount">15 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">30 يوم</span>
+                            <span class="price-amount">20 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">60 يوم</span>
+                            <span class="price-amount">35 دراهم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2 class="contact-title">جاهز لتحسين تجربة الألعاب لديك؟</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">تواصل معنا الآن للحصول على أفضل كونفيغ يناسب احتياجاتك</p>
+            
+            <div class="contact-buttons">
+                <a href="https://wa.me/212690068362" class="contact-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    واتساب: 690068362
+                </a>
+                <a href="https://t.me/serviice_c_vip" class="contact-btn">
+                    <i class="fab fa-telegram"></i>
+                    تليجرام: serviice_c_vip
+                </a>
+            </div>
+            
+            <div class="payment-methods">
+                <i class="fas fa-credit-card payment-icon"></i>
+                <span>طرق الدفع: تعبئة انوي / كاش بلوس / سياش</span>
+            </div>
+            
+            <a href="https://t.me/v_e_r_f_y" class="reviews-link">
+                <i class="fas fa-star"></i>
+                تصفح آراء عملائنا السابقين
+            </a>
+        </div>
     </div>
-
-    <div class="section">
-      <h2>كونفيغ ديال انوي *6 (بينج 90)</h2>
-      <div class="plan">15 يوم = <strong>10 دراهم</strong> ✅</div>
-      <div class="plan">30 يوم = <strong>15 دراهم</strong> ✅</div>
-      <div class="plan">60 يوم = <strong>30 دراهم</strong> ✅</div>
-    </div>
-
-    <div class="section">
-      <h2>كونفيغ وين 0 درهم (بينج 74)</h2>
-      <div class="plan">15 يوم = <strong>15 دراهم</strong> ✅</div>
-      <div class="plan">30 يوم = <strong>20 دراهم</strong> ✅</div>
-      <div class="plan">60 يوم = <strong>35 دراهم</strong> ✅</div>
-    </div>
-
-    <div class="section">
-      <h2>كونفيغ اتصالات *6 (بينج 60)</h2>
-      <div class="plan">15 يوم = <strong>15 دراهم</strong> ✅</div>
-      <div class="plan">30 يوم = <strong>20 دراهم</strong> ✅</div>
-      <div class="plan">60 يوم = <strong>35 دراهم</strong> ✅</div>
-    </div>
-
-    <div class="section">
-      <h2>كونفيغ ZIVPN وين 0 درهم</h2>
-      <div class="plan">30 يوم = <strong>25 دراهم</strong> ✅</div>
-      <div class="plan">60 يوم = <strong>45 دراهم</strong> ✅</div>
-      <div class="plan">90 يوم = <strong>60 دراهم</strong> ✅</div>
-    </div>
-
-    <div class="section">
-      <h2>متوفر حتى لأجهزة iPhone (NPV Tunnel) 🎉</h2>
-    </div>
-
-    <div class="section contact">
-      <h3>طرق الدفع:</h3>
-      <p>تعبئة انوي / كاش بلوس / سياش 💳</p>
-      <a href="https://wa.me/212690068362" target="_blank">🟢 تواصل عبر واتساب</a>
-      <a href="https://t.me/serviice_c_vip" target="_blank">🔵 تواصل عبر تيليجرام</a>
-      <a href="https://t.me/v_e_r_f_y" target="_blank">📣 الرأي ديال الناس</a>
-    </div>
-
-    <div class="footer">
-      جميع الحقوق محفوظة © 2025
-    </div>
-  </div>
 </body>
-</html>
+  </html>
