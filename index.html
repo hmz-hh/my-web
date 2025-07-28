@@ -8,93 +8,99 @@
 </head>
 <body class="bg-gray-900 text-white font-sans p-6">
 
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-8">اختر خطة</h2>
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-8">اختر خطتك حسب الخدمة</h2>
 
-  <!-- ===== سطر SSH & V2ray ===== -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 px-2">
+  <!-- قسم SSH -->
+  <section class="mb-12">
+    <h3 class="text-2xl font-bold text-green-400 mb-4 text-center">خدمات SSH</h3>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- بطاقة SSH 1 -->
+      <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 transition-transform relative">
+        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH UDP</div>
+        <h3 class="text-xl font-semibold mb-3">WIN 0DH</h3>
+        <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
+        <ul class="mb-4 space-y-1 text-sm">
+          <li>✅ 3 ميجا سرعة</li>
+          <li>✅ SSH فقط</li>
+          <li>✅ 5GB شهري</li>
+        </ul>
+        <a href="free1" class="block w-full bg-green-400 hover:bg-green-300 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+      </div>
 
-    <!-- البطاقة 1 -->
-    <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 relative">
-      <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH UDP</div>
-      <h3 class="text-xl font-semibold mb-3">WIN 0DH</h3>
-      <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
-      <ul class="mb-4 space-y-1 text-sm">
-        <li>✅ 3 ميجا سرعة</li>
-        <li>✅ SSH فقط</li>
-        <li>✅ 5GB شهري</li>
-      </ul>
-      <a href="free1" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+      <!-- بطاقة SSH 2 -->
+      <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 transition-transform relative">
+        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH WS</div>
+        <h3 class="text-xl font-semibold mb-3">INWI *6</h3>
+        <p class="text-3xl font-bold text-green-300 mb-2">15DH<span class="text-sm text-gray-300"> /شهر</span></p>
+        <ul class="mb-4 space-y-1 text-sm">
+          <li>✅ بروتوكول OpenVPN</li>
+          <li>✅ 4 ميجا سرعة</li>
+          <li>✅ 7GB شهري</li>
+        </ul>
+        <a href="free2" class="block w-full bg-green-400 hover:bg-green-300 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+      </div>
+
+      <!-- بطاقة SSH 3 -->
+      <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 transition-transform relative">
+        <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">V2RAY/SSH</div>
+        <h3 class="text-xl font-semibold mb-3">Free V2ray</h3>
+        <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
+        <ul class="mb-4 space-y-1 text-sm">
+          <li>✅ دعم Vmess & Vless</li>
+          <li>✅ سرعة عادية</li>
+          <li>✅ 10GB شهري</li>
+        </ul>
+        <a href="free3" class="block w-full bg-green-400 hover:bg-green-300 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+      </div>
     </div>
+  </section>
 
-    <!-- البطاقة 2 -->
-    <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 relative">
-      <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">SSH WS</div>
-      <h3 class="text-xl font-semibold mb-3">INWI *6</h3>
-      <p class="text-3xl font-bold text-green-300 mb-2">15DH<span class="text-sm text-gray-300"> /شهر</span></p>
-      <ul class="mb-4 space-y-1 text-sm">
-        <li>✅ بروتوكول OpenVPN</li>
-        <li>✅ 4 ميجا سرعة</li>
-        <li>✅ 7GB شهري</li>
-      </ul>
-      <a href="free2" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+  <!-- قسم VPS -->
+  <section class="mb-12">
+    <h3 class="text-2xl font-bold text-blue-400 mb-4 text-center">خدمات VPS</h3>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- بطاقة VPS 1 -->
+      <div class="bg-blue-800 rounded-2xl p-4 shadow-xl border border-blue-400 transition-transform relative">
+        <div class="absolute top-3 left-3 bg-blue-600 text-xs px-2 py-1 rounded-full font-bold">VVPS</div>
+        <h3 class="text-xl font-semibold mb-3">VPS خاص</h3>
+        <p class="text-3xl font-bold text-blue-300 mb-2">50DH<span class="text-sm text-gray-300"> /شهر</span></p>
+        <ul class="mb-4 space-y-1 text-sm">
+          <li>✅ سرعة عالية</li>
+          <li>✅ تحكم كامل</li>
+          <li>✅ 24/7 دعم فني</li>
+        </ul>
+        <a href="vvps" class="block w-full bg-blue-400 hover:bg-blue-300 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+      </div>
+
+      <!-- VPS 2 & 3 (اختياري: تقدر تزيد بطاقات هنا بنفس الشكل لو حاب) -->
+
     </div>
+  </section>
 
-    <!-- البطاقة 3 -->
-    <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 relative">
-      <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">V2RAY/SSH</div>
-      <h3 class="text-xl font-semibold mb-3">Free V2ray</h3>
-      <p class="text-3xl font-bold text-green-300 mb-2">20DH<span class="text-sm text-gray-300"> /شهر</span></p>
-      <ul class="mb-4 space-y-1 text-sm">
-        <li>✅ دعم Vmess & Vless</li>
-        <li>✅ سرعة عادية</li>
-        <li>✅ 10GB شهري</li>
-      </ul>
-      <a href="free3" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+  <!-- قسم السكريبتات -->
+  <section class="mb-12">
+    <h3 class="text-2xl font-bold text-purple-400 mb-4 text-center">سكريبتات جاهزة</h3>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- بطاقة سكريبت -->
+      <div class="bg-purple-800 rounded-2xl p-4 shadow-xl border border-purple-400 transition-transform relative">
+        <div class="absolute top-3 left-3 bg-purple-600 text-xs px-2 py-1 rounded-full font-bold">سكريبت</div>
+        <h3 class="text-xl font-semibold mb-3">سيرفر سكريبت</h3>
+        <p class="text-3xl font-bold text-purple-300 mb-2">30DH<span class="text-sm text-gray-300"> /مرة</span></p>
+        <ul class="mb-4 space-y-1 text-sm">
+          <li>✅ سكريبت جاهز للتثبيت</li>
+          <li>✅ دعم للبروتوكولات</li>
+          <li>✅ سهل التخصيص</li>
+        </ul>
+        <a href="script" class="block w-full bg-purple-400 hover:bg-purple-300 transition-transform text-black font-bold py-2 rounded-xl text-center">احصل عليه</a>
+      </div>
+
+      <!-- سكريبت 2 & 3 (اختياري) -->
+
     </div>
-  </div>
-
-  <!-- ===== سطر VPS ===== -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 px-2">
-
-    <!-- البطاقة 4 -->
-    <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 relative">
-      <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">VPS</div>
-      <h3 class="text-xl font-semibold mb-3">VPS صغير</h3>
-      <p class="text-3xl font-bold text-green-300 mb-2">50DH<span class="text-sm text-gray-300"> /شهر</span></p>
-      <ul class="mb-4 space-y-1 text-sm">
-        <li>✅ 1 vCPU - 1GB RAM</li>
-        <li>✅ 15GB SSD</li>
-        <li>✅ انظمة Linux</li>
-      </ul>
-      <a href="vps1" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">اطلب الآن</a>
-    </div>
-
-    <!-- البطاقة 5 -->
-    <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 relative">
-      <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">VPS</div>
-      <h3 class="text-xl font-semibold mb-3">VPS متوسط</h3>
-      <p class="text-3xl font-bold text-green-300 mb-2">80DH<span class="text-sm text-gray-300"> /شهر</span></p>
-      <ul class="mb-4 space-y-1 text-sm">
-        <li>✅ 2 vCPU - 2GB RAM</li>
-        <li>✅ 30GB SSD</li>
-        <li>✅ دعم Docker</li>
-      </ul>
-      <a href="vps2" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">اطلب الآن</a>
-    </div>
-
-    <!-- البطاقة 6 -->
-    <div class="bg-green-800 rounded-2xl p-4 shadow-xl border border-green-400 relative">
-      <div class="absolute top-3 left-3 bg-green-600 text-xs px-2 py-1 rounded-full font-bold">VPS</div>
-      <h3 class="text-xl font-semibold mb-3">VPS محترف</h3>
-      <p class="text-3xl font-bold text-green-300 mb-2">120DH<span class="text-sm text-gray-300"> /شهر</span></p>
-      <ul class="mb-4 space-y-1 text-sm">
-        <li>✅ 2 vCPU - 4GB RAM</li>
-        <li>✅ 50GB SSD</li>
-        <li>✅ اتصال سريع</li>
-      </ul>
-      <a href="vps3" class="block w-full bg-green-400 hover:bg-green-300 hover:scale-105 transition-transform text-black font-bold py-2 rounded-xl text-center">اطلب الآن</a>
-    </div>
-  </div>
+  </section>
 
   <!-- طرق الدفع -->
   <section class="mt-12 max-w-xl mx-auto text-center">
@@ -103,7 +109,7 @@
       يمكنك الدفع باستخدام CIH، CACH PLUS، BARID BANK. جميع طرق الدفع آمنة وسريعة لضمان راحتك.
     </p>
     <a href="https://t.me/free_net_mrr/878" target="_blank" rel="noopener"
-       class="inline-flex items-center bg-purple-600 hover:bg-purple-700 active:scale-95 active:bg-purple-800 text-white font-bold py-3 px-6 rounded-xl text-lg transform transition duration-150 ease-in-out">
+       class="inline-flex items-center bg-purple-600 hover:bg-purple-700 active:scale-95 active:bg-purple-800 text-white font-bold py-3 px-6 rounded-xl text-lg transition duration-150 ease-in-out">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
@@ -117,4 +123,4 @@
   </footer>
 
 </body>
-</html>
+          </html>
