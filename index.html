@@ -3,159 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدمة كونفيغ سريع للألعاب</title>
+    <title>كونفيغ VIP للألعاب - أسرع اتصال بدون تقطيع</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+        :root {
+            --primary: #6C5CE7;
+            --secondary: #00CEFF;
+            --accent: #FF3D68;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --success: #00B894;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
         }
-        h1 {
-            color: #e74c3c;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .offer {
-            margin-bottom: 30px;
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #e74c3c;
-        }
-        .offer-title {
-            font-weight: bold;
-            color: #e74c3c;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .price {
-            background-color: #e74c3c;
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-block;
-            margin-left: 5px;
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+            position: relative;
+            overflow: hidden;
         }
-        .feature {
-            margin: 5px 0;
-            padding-right: 15px;
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 3rem;
+        }
+        
+        .plan {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
         }
-        .feature:before {
-            content: "✓";
-            color: #27ae60;
-            position: absolute;
-            right: 0;
+        
+        .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        .contact {
+        
+        .plan-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
             text-align: center;
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #f0f0f0;
+        }
+        
+        .plan-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .plan-ping {
+            background: var(--accent);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .plan-price {
+            padding: 1.5rem;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price-duration {
+            font-weight: bold;
+        }
+        
+        .price-amount {
+            background: var(--light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .contact-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
             border-radius: 8px;
-        }
-        .whatsapp {
-            background-color: #25D366;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px;
             font-weight: bold;
-        }
-        .telegram {
-            background-color: #0088cc;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
             text-decoration: none;
-            display: inline-block;
-            margin: 5px;
-            font-weight: bold;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+        }
+        
+        .telegram-btn {
+            background: #0088CC;
+        }
+        
+        .payment-methods {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .payment-methods i {
+            margin-left: 5px;
+        }
+        
         .reviews {
             text-align: center;
-            margin-top: 20px;
+            margin-bottom: 2rem;
         }
+        
         .reviews a {
-            color: #e74c3c;
+            color: var(--primary);
             text-decoration: none;
             font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
-        .payment {
-            margin-top: 20px;
+        
+        .guarantee {
+            background: linear-gradient(to right, var(--success), #55EFC4);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
             text-align: center;
-            font-style: italic;
-            color: #7f8c8d;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
-        .emoji {
-            font-size: 20px;
+        
+        .guarantee-icon {
+            font-size: 2rem;
+        }
+        
+        .guarantee-text {
+            text-align: right;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .plans-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .guarantee {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .guarantee-text {
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>بغيتي كونفيغ سريع؟ بدون تقطعات ومشاكل؟ <span class="emoji">🔥</span></h1>
+        <header>
+            <h1>كونفيغ VIP للألعاب <i class="fas fa-rocket"></i></h1>
+            <p class="subtitle">أسرع اتصال بدون تقطيع - بينج منخفض - استقرار عالي</p>
+            <div class="features">
+                <div class="feature-badge"><i class="fas fa-bolt"></i> سرعة فائقة</div>
+                <div class="feature-badge"><i class="fas fa-gamepad"></i> دعم الألعاب</div>
+                <div class="feature-badge"><i class="fas fa-shield-alt"></i> أمان عالي</div>
+                <div class="feature-badge"><i class="fas fa-headset"></i> دعم فني</div>
+            </div>
+        </header>
         
-        <div class="offer">
-            <div class="offer-title">كونفيغ ديال انوي *6 <span class="emoji">🚀</span></div>
-            <div class="feature">كيدعم العاب بينج 90</div>
-            <div class="feature">اشتراك 15 يوم = <span class="price">10 دراهم</span></div>
-            <div class="feature">اشتراك 30 يوم = <span class="price">15 دراهم</span></div>
-            <div class="feature">اشتراك 60 يوم = <span class="price">30 دراهم</span></div>
+        <div class="plans-container">
+            <div class="plan">
+                <div class="plan-header">
+                    <div class="plan-title">
+                        <span>كونفيغ انوي *6</span>
+                        <span class="plan-ping">بينج 90</span>
+                    </div>
+                </div>
+                <div class="plan-price">
+                    <div class="price-item">
+                        <span class="price-duration">15 يوم</span>
+                        <span class="price-amount">10 دراهم</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-duration">30 يوم</span>
+                        <span class="price-amount">15 دراهم</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-duration">60 يوم</span>
+                        <span class="price-amount">30 دراهم</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="plan">
+                <div class="badge">الأكثر طلباً</div>
+                <div class="plan-header">
+                    <div class="plan-title">
+                        <span>كونفيغ وين 0 درهم</span>
+                        <span class="plan-ping">بينج 74</span>
+                    </div>
+                </div>
+                <div class="plan-price">
+                    <div class="price-item">
+                        <span class="price-duration">15 يوم</span>
+                        <span class="price-amount">15 دراهم</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-duration">30 يوم</span>
+                        <span class="price-amount">20 دراهم</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-duration">60 يوم</span>
+                        <span class="price-amount">35 دراهم</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="plan">
+                <div class="plan-header">
+                    <div class="plan-title">
+                        <span>كونفيغ اتصلات *6</span>
+                        <span class="plan-ping">بينج 60</span>
+                    </div>
+                </div>
+                <div class="plan-price">
+                    <div class="price-item">
+                        <span class="price-duration">15 يوم</span>
+                        <span class="price-amount">15 دراهم</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-duration">30 يوم</span>
+                        <span class="price-amount">20 دراهم</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-duration">60 يوم</span>
+                        <span class="price-amount">35 دراهم</span>
+                    </div>
+                </div>
+            </div>
         </div>
         
-        <div class="offer">
-            <div class="offer-title">كونفيغ وين 0 درهم <span class="emoji">🚀</span></div>
-            <div class="feature">كيدعم العاب بينج 74</div>
-            <div class="feature">اشتراك 15 يوم = <span class="price">15 دراهم</span></div>
-            <div class="feature">اشتراك 30 يوم = <span class="price">20 دراهم</span></div>
-            <div class="feature">اشتراك 60 يوم = <span class="price">35 دراهم</span></div>
+        <div class="plan" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
+            <div class="plan-header">
+                <div class="plan-title">
+                    <span>ZIVPN لتطبيق وين 0 درهم</span>
+                    <span class="plan-ping">متعدد الاستخدامات</span>
+                </div>
+            </div>
+            <div class="plan-price">
+                <div class="price-item">
+                    <span class="price-duration">30 يوم</span>
+                    <span class="price-amount">25 دراهم</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-duration">60 يوم</span>
+                    <span class="price-amount">45 دراهم</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-duration">90 يوم</span>
+                    <span class="price-amount">60 دراهم</span>
+                </div>
+            </div>
         </div>
         
-        <div class="offer">
-            <div class="offer-title">كونفيغ اتصلات *6 <span class="emoji">🚀</span></div>
-            <div class="feature">كيدعم العاب بينج 60</div>
-            <div class="feature">اشتراك 15 يوم = <span class="price">15 دراهم</span></div>
-            <div class="feature">اشتراك 30 يوم = <span class="price">20 دراهم</span></div>
-            <div class="feature">اشتراك 60 يوم = <span class="price">35 دراهم</span></div>
+        <div class="guarantee">
+            <div class="guarantee-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="guarantee-text">
+                <h3>ضمان الجودة والسرعة!</h3>
+                <p>خدمة موثوقة مع دعم فني متواصل لضمان تجربة خالية من المشاكل</p>
+            </div>
         </div>
         
-        <div class="offer">
-            <div class="offer-title">كونفيغ ديال وين 0 درهم لتطبيق ZIVPN <span class="emoji">🚀</span></div>
-            <div class="feature">اشتراك 30 يوم = <span class="price">25 دراهم</span></div>
-            <div class="feature">اشتراك 60 يوم = <span class="price">45 دراهم</span></div>
-            <div class="feature">اشتراك 30 يوم = <span class="price">60 دراهم</span></div>
-        </div>
-        
-        <div class="feature" style="text-align: center; margin-top: 20px;">
-            متوفر حتى ديال ايفون (NPV TUNNEL) <span class="emoji">🎉</span>
-        </div>
-        
-        <div class="payment">
-            طرق الدفع: تعبئة انوي / كاش بلوس / سياش <span class="emoji">💳</span>
-        </div>
-        
-        <div class="contact">
-            <div style="margin-bottom: 15px; font-weight: bold;">بغيتي تشري؟ تواصل هنا <span class="emoji">🔥 🚀</span></div>
-            <a href="https://wa.me/212690068362" class="whatsapp">🟢 وتساب: wa.me/212690068362</a>
-            <a href="https://t.me/serviice_c_vip" class="telegram">🔵 تيليجرام: t.me/serviice_c_vip</a>
+        <div class="contact-section">
+            <h2 class="contact-title">متوفر الآن للأيفون <i class="fab fa-apple"></i> والأندرويد <i class="fab fa-android"></i></h2>
+            <p style="margin-bottom: 1.5rem;">بغيتي تشري أو عندك أي استفسار؟ تواصل معنا الآن!</p>
+            
+            <div class="contact-methods">
+                <a href="https://wa.me/212690068362" class="contact-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    الواتساب: 690068362
+                </a>
+                <a href="https://t.me/serviice_c_vip" class="contact-btn telegram-btn">
+                    <i class="fab fa-telegram"></i>
+                    التليجرام: serviice_c_vip
+                </a>
+            </div>
+            
+            <div class="payment-methods">
+                <i class="fas fa-credit-card"></i> طرق الدفع: تعبئة انوي / كاش بلوس / سياش
+            </div>
         </div>
         
         <div class="reviews">
-            الرأي ديال الناس: <a href="https://t.me/v_e_r_f_y">https://t.me/v_e_r_f_y</a> <span class="emoji">🥇</span>
+            <a href="https://t.me/v_e_r_f_y">
+                <i class="fas fa-star"></i> آراء العملاء وتقييماتهم
+            </a>
         </div>
     </div>
 </body>
