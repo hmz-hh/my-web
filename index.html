@@ -1,247 +1,452 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>عروض الكونفيغ 🔥</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Cairo', sans-serif;
-      background: #121212;
-      color: #f0f0f0;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px 15px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #ff4081;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .intro {
-      background: #1e1e1e;
-      text-align: center;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 25px;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .section {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(255, 64, 129, 0.2);
-    }
-
-    .section h2 {
-      margin-top: 0;
-      color: #03dac6;
-      border-bottom: 1px solid #333;
-      padding-bottom: 5px;
-      font-size: 20px;
-    }
-
-    .price-item {
-      background: #2a2a2a;
-      border-radius: 8px;
-      padding: 10px 15px;
-      margin: 10px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-right: 5px solid #ff4081;
-    }
-
-    .price-duration {
-      font-size: 14px;
-    }
-
-    .price-amount {
-      color: #ffeb3b;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .buy-btn {
-      background: linear-gradient(45deg, #00F5FF, #B721FF);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 25px;
-      font-size: 13px;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .buy-btn:hover {
-      background: linear-gradient(45deg, #B721FF, #FF3D9A);
-    }
-
-    .contact {
-      background: #2e2e2e;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-
-    .contact a {
-      color: #03a9f4;
-      display: inline-block;
-      margin: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 13px;
-      color: #888;
-    }
-
-    @media(max-width: 600px) {
-      h1 {
-        font-size: 24px;
-      }
-
-      .section h2 {
-        font-size: 18px;
-      }
-
-      .price-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .buy-btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كونفيغ VIP - أسرع اتصال للألعاب | بينج منخفض</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-blue: #00F5FF;
+            --electric-purple: #B721FF;
+            --vivid-pink: #FF3D9A;
+            --cyber-yellow: #FFD300;
+            --dark-space: #0F0F1E;
+            --pure-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--dark-space);
+            color: var(--pure-white);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(183, 33, 255, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 245, 255, 0.15) 0%, transparent 25%);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.8rem;
+        }
+        
+        .slogan {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .plans-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--electric-purple));
+            border-radius: 3px;
+        }
+        
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .plan-card {
+            background: rgba(15, 15, 30, 0.85);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .plan-card.popular {
+            border: 2px solid var(--cyber-yellow);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--cyber-yellow);
+            color: var(--dark-space);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+        
+        .plan-header {
+            padding: 1.2rem;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(183, 33, 255, 0.2));
+            position: relative;
+        }
+        
+        .plan-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .plan-icon {
+            font-size: 1rem;
+        }
+        
+        .plan-ping {
+            display: inline-block;
+            background: rgba(0, 245, 255, 0.2);
+            color: var(--neon-blue);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .plan-price-list {
+            padding: 1.2rem;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price-duration {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .duration-icon {
+            color: var(--neon-blue);
+            font-size: 0.9rem;
+        }
+        
+        .price-amount {
+            background: linear-gradient(45deg, var(--vivid-pink), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        
+        .contact-section {
+            background: rgba(15, 15, 30, 0.85);
+            border-radius: 12px;
+            padding: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            font-size: 0.85rem;
+            transition: transform 0.3s;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .btn-icon {
+            font-size: 0.9rem;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.8rem 1rem;
+            border-radius: 30px;
+            max-width: 100%;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .payment-icon {
+            font-size: 1rem;
+            color: var(--cyber-yellow);
+        }
+        
+        .reviews-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            padding: 0.6rem 1rem;
+            border-radius: 30px;
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        
+        .review-icon {
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.2rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+            
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-  <h1>كونفيغ ناضي بلا تقطاع 🚀</h1>
-
-  <div class="intro">
-    بغيتي كونفيغ سريع؟ كيدعم الألعاب؟ بلا مشاكل؟ بوحدك؟<br>
-    هاد الخدمة ديال بصّاح 🔥
-  </div>
-
-  <!-- Inwi -->
-  <div class="section">
-    <h2>🔹 كونفيغ انوي *6 (بينج 90)</h2>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 15 يوم</span>
-      <span class="price-amount">10 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20انوي%2015%20يوم" class="buy-btn" target="_blank">شراء</a>
+    <div class="container">
+        <header>
+            <div class="logo">كونفيغ VIP</div>
+            <p class="slogan">أسرع اتصال للألعاب بدون تقطيع مع بينج منخفض</p>
+        </header>
+        
+        <div class="plans-section">
+            <h2 class="section-title">باقات الاشتراكات</h2>
+            
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">
+                            <i class="fas fa-mobile-alt plan-icon"></i>
+                            كونفيغ انوي *6
+                        </h3>
+                        <span class="plan-ping"><i class="fas fa-bolt"></i> بينج 90</span>
+                    </div>
+                    <div class="plan-price-list">
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                15 يوم
+                            </span>
+                            <span class="price-amount">10 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                30 يوم
+                            </span>
+                            <span class="price-amount">15 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                60 يوم
+                            </span>
+                            <span class="price-amount">30 دراهم</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plan-card popular">
+                    <div class="popular-badge">الأكثر طلباً</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">
+                            <i class="fas fa-wifi plan-icon"></i>
+                            كونفيغ وين 0 درهم
+                        </h3>
+                        <span class="plan-ping"><i class="fas fa-bolt"></i> بينج 74</span>
+                    </div>
+                    <div class="plan-price-list">
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                15 يوم
+                            </span>
+                            <span class="price-amount">15 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                30 يوم
+                            </span>
+                            <span class="price-amount">20 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                60 يوم
+                            </span>
+                            <span class="price-amount">35 دراهم</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">
+                            <i class="fas fa-phone-alt plan-icon"></i>
+                            كونفيغ اتصلات *6
+                        </h3>
+                        <span class="plan-ping"><i class="fas fa-bolt"></i> بينج 60</span>
+                    </div>
+                    <div class="plan-price-list">
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                15 يوم
+                            </span>
+                            <span class="price-amount">15 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                30 يوم
+                            </span>
+                            <span class="price-amount">20 دراهم</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-duration">
+                                <i class="far fa-calendar-check duration-icon"></i>
+                                60 يوم
+                            </span>
+                            <span class="price-amount">35 دراهم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2 class="contact-title">للطلب أو الاستفسار</h2>
+            <p class="contact-subtitle">تواصل معنا عبر الوسائل التالية:</p>
+            
+            <div class="contact-buttons">
+                <a href="https://wa.me/212690068362" class="contact-btn">
+                    <i class="fab fa-whatsapp btn-icon"></i>
+                    واتساب: 690068362
+                </a>
+                <a href="https://t.me/serviice_c_vip" class="contact-btn">
+                    <i class="fab fa-telegram btn-icon"></i>
+                    تليجرام: serviice_c_vip
+                </a>
+            </div>
+            
+            <div class="payment-methods">
+                <i class="fas fa-credit-card payment-icon"></i>
+                <span>طرق الدفع: تعبئة انوي / كاش بلوس / سياش</span>
+            </div>
+            
+            <a href="https://t.me/v_e_r_f_y" class="reviews-link">
+                <i class="fas fa-star review-icon"></i>
+                آراء العملاء
+            </a>
+        </div>
     </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
-      <span class="price-amount">15 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20انوي%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
-      <span class="price-amount">30 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20انوي%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-  </div>
-
-  <!-- Win 0 -->
-  <div class="section">
-    <h2>🔹 كونفيغ وين 0 درهم (بينج 74)</h2>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 15 يوم</span>
-      <span class="price-amount">15 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20وين%200%20درهم%2015%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
-      <span class="price-amount">20 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20وين%200%20درهم%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
-      <span class="price-amount">35 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20وين%200%20درهم%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-  </div>
-
-  <!-- اتصالات -->
-  <div class="section">
-    <h2>🔹 كونفيغ اتصالات *6 (بينج 60)</h2>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 15 يوم</span>
-      <span class="price-amount">15 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20اتصالات%2015%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
-      <span class="price-amount">20 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20اتصالات%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
-      <span class="price-amount">35 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20اتصالات%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-  </div>
-
-  <!-- ZIVPN -->
-  <div class="section">
-    <h2>🔹 كونفيغ ZIVPN (وين 0 درهم)</h2>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 30 يوم</span>
-      <span class="price-amount">25 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20ZIVPN%2030%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 60 يوم</span>
-      <span class="price-amount">45 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20ZIVPN%2060%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-    <div class="price-item">
-      <span class="price-duration"><i class="far fa-calendar-check"></i> 90 يوم</span>
-      <span class="price-amount">60 دراهم</span>
-      <a href="https://wa.me/212690068362?text=بغيت%20كونفيغ%20ZIVPN%2090%20يوم" class="buy-btn" target="_blank">شراء</a>
-    </div>
-  </div>
-
-  <!-- iPhone -->
-  <div class="section">
-    <h2>🔹 متوفر حتى لآيفون (NPV TUNNEL) 🎉</h2>
-  </div>
-
-  <!-- Contact -->
-  <div class="contact">
-    <p><strong>طرق الدفع:</strong> تعبئة انوي / كاش بلوس / السياش 💳</p>
-    <a href="https://wa.me/212690068362" target="_blank">🟢 تواصل عبر واتساب</a>
-    <a href="https://t.me/serviice_c_vip" target="_blank">🔵 تواصل عبر تيليجرام</a>
-    <a href="https://t.me/v_e_r_f_y" target="_blank">📣 آراء الزبناء</a>
-  </div>
-
-  <div class="footer">
-    © 2025 جميع الحقوق محفوظة - خدمة كونفيغ ناضي
-  </div>
-</div>
-
 </body>
 </html>
