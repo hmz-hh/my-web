@@ -4,73 +4,103 @@
   <meta charset="UTF-8">
   <title>تثبيت سكريبت VPS</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #e3f2fd, #ffffff);
-      text-align: center;
-      padding: 50px 20px;
-      color: #333;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
     }
 
     h2 {
-      color: #0d47a1;
-      margin-bottom: 30px;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 800px;
     }
 
     textarea {
-      width: 95%;
-      max-width: 800px;
-      height: 140px;
-      font-family: 'Courier New', Courier, monospace;
+      width: 100%;
+      height: 150px;
+      font-family: 'Courier New', monospace;
       font-size: 14px;
       padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background-color: #f9f9f9;
+      border-radius: 10px;
+      border: none;
       resize: none;
-      direction: ltr;
+      background-color: #1e1e2f;
+      color: #00ffae;
+      margin-bottom: 20px;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 30px;
+      background-color: #00c9a7;
+      color: #fff;
+      padding: 12px 25px;
       font-size: 16px;
-      background-color: #1976d2;
-      color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     button:hover {
-      background-color: #1565c0;
+      background-color: #00b296;
     }
 
     .footer {
       margin-top: 40px;
       font-size: 13px;
-      color: #666;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 22px;
+      }
+
+      textarea {
+        height: 130px;
+      }
     }
   </style>
 </head>
 <body>
-  <h2>تثبيت سكريبت VPS (جميع البروتوكولات)</h2>
-
-  <textarea id="script" readonly>
+  <h2>🔧 سكريبت التثبيت الشامل لـ VPS</h2>
+  <div class="container">
+    <textarea id="script" readonly>
 apt-get update && apt install -y idn && apt-get --reinstall --fix-missing install -y whois bzip2 gzip coreutils wget screen nscd && wget -q --no-check-certificate -O setup.sh script.ha-vps.store/setup.sh && chmod +x setup.sh && ./setup.sh
-  </textarea>
+    </textarea>
+    <button onclick="copyScript()">📋 نسخ السكريبت</button>
+  </div>
 
-  <br>
-  <button onclick="copyScript()">📋 نسخ السكريبت</button>
-
-  <div class="footer">جميع الحقوق محفوظة &copy; 2025</div>
+  <div class="footer">جميع الحقوق محفوظة &copy; 2025 - HA VPS</div>
 
   <script>
     function copyScript() {
-      var text = document.getElementById("script");
-      text.select();
-      text.setSelectionRange(0, 99999); // لأجهزة الجوال
+      const textArea = document.getElementById("script");
+      textArea.select();
+      textArea.setSelectionRange(0, 99999); // للهواتف
       document.execCommand("copy");
       alert("✅ تم نسخ السكريبت بنجاح!");
     }
