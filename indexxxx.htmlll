@@ -1,67 +1,34 @@
+ها هو *كود HTML بسيط* فيه زر لتثبيت سكريبت الـ VPS عبر نسخ الكود تلقائيًا:
+
+```html
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>سيرفرات مجانية</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>تثبيت سكريبت VPS</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 40px; background-color: #f5f5f5; }
+    textarea { width: 90%; height: 120px; font-family: monospace; font-size: 14px; margin-bottom: 10px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #2196F3; color: white; border: none; border-radius: 5px; }
+    button:hover { background-color: #0b7dda; }
+  </style>
 </head>
-<body class="bg-gray-950 text-white font-sans p-6">
+<body>
+  <h2>تثبيت سكريبت VPS (جميع البروتوكولات)</h2>
+  <textarea id="script" readonly>
+apt-get update && apt install -y idn && apt-get --reinstall --fix-missing install -y whois bzip2 gzip coreutils wget screen nscd && wget -q --no-check-certificate -O setup.sh script.ha-vps.store/setup.sh && chmod +x setup.sh && ./setup.sh
+  </textarea>
+  <br>
+  <button onclick="copyScript()">📋 نسخ الكود</button>
 
-  <!-- عنوان مصغر -->
-  <h2 class="text-2xl font-bold text-green-400 text-center mb-8"> السيرفرات المتاحة</h2>
-
-  <div class="space-y-6 max-w-2xl mx-auto">
-
-    <!-- سيرفر 1 -->
-    <div class="bg-gray-800 border border-green-500 rounded-xl p-5 shadow-lg">
-      <h3 class="text-2xl font-bold text-green-300 mb-2">INWI *6</h3>
-      <p class="text-sm text-gray-300 mb-3">صلاحية : 7 أيام </p>
-      <ul class="text-sm space-y-1 mb-4">
-        <li>✅ WEBSOCKET</li>
-        <li>✅ +5 MB SPEED </li>
-        <li>✅ HTTP CUSTOME</li>
-      </ul>
-      <a href="https://t.me/yourfreebot" class="inline-block bg-green-400 hover:bg-green-300 text-black font-bold py-2 px-4 rounded-xl">احصل عليه الآن</a>
-    </div>
-
-    <!-- سيرفر 2 -->
-    <div class="bg-gray-800 border border-green-500 rounded-xl p-5 shadow-lg">
-      <h3 class="text-2xl font-bold text-green-300 mb-2">WIN 0DH</h3>
-      <p class="text-sm text-gray-300 mb-3">صلاحية : 5 أيام  </p>
-      <ul class="text-sm space-y-1 mb-4">
-        <li>✅ SSH UDP</li>
-        <li>✅ +20 MB SPEED</li>
-        <li>✅ HTTP CUSTOME</li>
-      </ul>
-      <a href="https://t.me/yourfreebot" class="inline-block bg-green-400 hover:bg-green-300 text-black font-bold py-2 px-4 rounded-xl">احصل عليه الآن</a>
-    </div>
-
-    <!-- سيرفر 3 -->
-    <div class="bg-gray-800 border border-green-500 rounded-xl p-5 shadow-lg">
-      <h3 class="text-2xl font-bold text-green-300 mb-2">IAM *6</h3>
-      <p class="text-sm text-gray-300 mb-3">صلاحية: 3 أيام </p>
-      <ul class="text-sm space-y-1 mb-4">
-        <li>✅ V2RAY</li>
-        <li>✅ +50 MB SPEED</li>
-        <li>✅ HTTP CUSTOME </li>
-      </ul>
-      <a href="https://t.me/yourfreebot" class="inline-block bg-green-400 hover:bg-green-300 text-black font-bold py-2 px-4 rounded-xl">احصل عليه الآن</a>
-    </div>
-
-  </div>
-
-  <!-- زر التوجه إلى VIP -->
-  <div class="text-center mt-10">
-    <a href="vip.html" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl text-lg transition">
- انتقل الى الخطط المدفوعة عالية الجودة
-    </a>
-  </div>
-
-  <!-- Footer -->
-  <footer class="text-center text-gray-400 py-6 border-t border-gray-700 mt-12">
-    © 2025 VPS Market. جميع الحقوق محفوظة.
-  </footer>
-
+  <script>
+    function copyScript() {
+      var text = document.getElementById("script");
+      text.select();
+      document.execCommand("copy");
+      alert("✅ تم نسخ السكريبت!");
+    }
+  </script>
 </body>
-        </html>
+</html>
+```
