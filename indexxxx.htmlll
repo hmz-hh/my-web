@@ -1,6 +1,4 @@
-ها هو *كود HTML بسيط* فيه زر لتثبيت سكريبت الـ VPS عبر نسخ الكود تلقائيًا:
-
-```html
+</html>
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -31,4 +29,3 @@ apt-get update && apt install -y idn && apt-get --reinstall --fix-missing instal
   </script>
 </body>
 </html>
-```
