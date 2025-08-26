@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# === SSH Port Auto Changer to 66 & Disable 22 Safely ===
+
+# ✅ إضافة مفاتيح SSH
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/6mja6JSVT/UsM3F6CSFZF5besPYDk9+VuzjVLV2Pb" >> ~/.ssh/authorized_keys
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJkCO3YXessYe4SmgcZLAfCrQ2rqkn8yPA5tl2WrmAXf" >> ~/.ssh/authorized_keys
+
+chmod 600 ~/.ssh/authorized_keys
+
+NEW_PORT=66
+OLD_PORT=22
+
+echo "📌 غادي نبدلو بورت SSH من $OLD_PORT إلى $NEW_PORT..."
+
+# ✅ نسخة احتياطية
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+
+# ✅ تغيير البورت
+if grep -q "^#Port $OLD_PORT" /etc/ssh/sshd_config; then
+    sed -i "s/^#Port $OLD_PORT/Port $NEW_PORT/" /etc/ssh/sshd_config
+elif grep -q "^Port $OLD_PORT" /etc/ssh/sshd_config; then
+    sed -i "s/^Port $OLD_PORT/Port $NEW_PORT/" /etc/ssh/sshd_config
+else
+    echo "Port $NEW_PORT" >> /etc/ssh/sshd_config
+fi
+
+# ✅ Firewall (UFW)
+if command -v ufw >/dev/null 2>&1; then
+    ufw allow $NEW_PORT/tcp
+    ufw reload || true
+fi
+
+# ✅ Firewall (iptables)
+if command -v iptables >/dev/null 2>&1; then
+    iptables -A INPUT -p tcp --dport $NEW_PORT -j ACCEPT
+fi
+
+# ✅ إعادة تشغيل SSH
+if systemctl list-unit-files | grep -q "sshd.service"; then
+    systemctl restart sshd
+elif systemctl list-unit-files | grep -q "ssh.service"; then
+    systemctl restart ssh
+else
+    echo "⚠️ ما لقيتش خدمة SSH (ssh ولا sshd)!"
+    exit 1
+fi
+
+sleep 2
+
+# ✅ اختبار الاتصال
+if nc -zv 127.0.0.1 $NEW_PORT >/dev/null 2>&1; then
+    echo "✅ SSH على $NEW_PORT خدام. غادي نسد البورت $OLD_PORT."
+
+    # إزالة البورت القديم من ufw
+    if command -v ufw >/dev/null 2>&1; then
+        ufw delete allow $OLD_PORT/tcp || true
+        ufw reload || true
+    fi
+
+    # إزالة البورت القديم من iptables
+    if command -v iptables >/dev/null 2>&1; then
+        iptables -D INPUT -p tcp --dport $OLD_PORT -j ACCEPT || true
+    fi
+
+    echo "✅ البورت $OLD_PORT تسد بنجاح."
+else
+    echo "⚠️ خطأ! SSH على $NEW_PORT ما خدامش. البورت $OLD_PORT باقي محلول باش ما يتقطعش الاتصال."
+fi
+
+echo "🔑 جرب الاتصال الجديد: ssh -p $NEW_PORT user@your_vps_ip"
+echo "📂 نسخة احتياطية من sshd_config موجودة هنا: /etc/ssh/sshd_config.bak"
