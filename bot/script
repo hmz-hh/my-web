@@ -14,7 +14,7 @@ from telegram.ext import (
 )
 
 # ====== إعداداتك ======
-TOKEN = "8160188168:AAEPsmCqZAOV1X1a9cat1j8_F8J48KktEOI"
+TOKEN = "8202145016:AAFswa7YiKXUOOTywr-It1f0nNpCQ04Ogv4"
 ADMIN_ID = 7432279779
 
 # ====== اللوجينغ ======
