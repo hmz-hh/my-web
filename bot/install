@@ -1,37 +1,33 @@
 #!/bin/bash
 set -e
 
-# ==== إعدادات عامة ====
+# ====== إعدادات عامة ======
 BOT_DIR="/usr/bin/telegram"
 BOT_FILE="bot.py"
-BOT_URL="https://github.com/hmz-hh/my-web/raw/refs/heads/main/bot/script"   # 🔴 حط هنا الرابط ديال السكريبت ديالك
+BOT_URL="https://github.com/hmz-hh/my-web/raw/refs/heads/main/bot/script"   # 🔗 غيّر الرابط باللي فيه سكريبتك
 SERVICE_FILE="/etc/systemd/system/telegram-bot.service"
 
-echo "📦 Installing dependencies..."
-sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y python3 python3-pip python3-venv screen tmux curl
+echo "📦 تحديث النظام وتثبيت المتطلبات..."
+apt update -y && apt install -y python3 python3-pip python3-venv curl
 
-# إنشاء المجلد
-sudo mkdir -p $BOT_DIR
+# إنشاء مجلد البوت
+mkdir -p $BOT_DIR
 
-# تنزيل السكريبت الرئيسي
-sudo curl -fsSL $BOT_URL -o $BOT_DIR/$BOT_FILE
+# تنزيل سكريبت البوت
+curl -fsSL "$BOT_URL" -o "$BOT_DIR/$BOT_FILE"
 
-# تثبيت مكتبات Python
-python3 -m venv $BOT_DIR/venv
-source $BOT_DIR/venv/bin/activate
-pip install --upgrade pip
-pip install python-telegram-bot==18.2
+# إنشاء بيئة افتراضية + تثبيت المكتبات
+python3 -m venv "$BOT_DIR/venv"
+"$BOT_DIR/venv/bin/pip" install --upgrade pip
+"$BOT_DIR/venv/bin/pip" install python-telegram-bot==13.15
 
-# إعداد ملف الخدمة systemd
-echo "🛠️ Creating systemd service..."
-sudo tee $SERVICE_FILE > /dev/null <<EOF
+# إنشاء ملف الخدمة systemd
+cat > "$SERVICE_FILE" <<EOF
 [Unit]
 Description=Telegram Bot Service
 After=network.target
 
 [Service]
-User=root
 WorkingDirectory=$BOT_DIR
 ExecStart=$BOT_DIR/venv/bin/python3 $BOT_DIR/$BOT_FILE
 Restart=always
@@ -40,9 +36,9 @@ Restart=always
 WantedBy=multi-user.target
 EOF
 
-# تفعيل الخدمة
-sudo systemctl daemon-reexec
-sudo systemctl enable telegram-bot
-sudo systemctl restart telegram-bot
+# تفعيل وتشغيل الخدمة
+systemctl daemon-reload
+systemctl enable telegram-bot
+systemctl restart telegram-bot
 
-echo "✅ Bot installed and running as a service (telegram-bot)."
+echo "✅ البوت تركب وخدام كـ systemd service (telegram-bot)."
