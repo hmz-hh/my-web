@@ -1,0 +1,41 @@
+#!/bin/bash
+set -e
+
+# ==== إعدادات ====
+BOT_DIR="/usr/bin/telegram"
+BOT_FILE="bot.py"
+SERVICE_FILE="/etc/systemd/system/telegram-bot.service"
+BOT_URL="https://github.com/hmz-hh/pp/raw/refs/heads/main/zi/menu"
+
+# ==== تجهيز المجلد ====
+mkdir -p $BOT_DIR
+
+# ==== تحميل السكريبت ====
+wget -q -O $BOT_DIR/$BOT_FILE $BOT_URL
+chmod +x $BOT_DIR/$BOT_FILE
+
+# ==== إنشاء خدمة systemd ====
+cat > $SERVICE_FILE <<EOL
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 $BOT_DIR/$BOT_FILE
+WorkingDirectory=$BOT_DIR
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
+EOL
+
+# ==== تفعيل وتشغيل الخدمة ====
+systemctl daemon-reload
+systemctl enable telegram-bot
+systemctl restart telegram-bot
+
+echo "✅ تم تنزيل bot.py وتشغيلو 24/24 عبر systemd"
+echo "🔎 تحقق من الحالة: systemctl status telegram-bot"
+echo "📜 اللوغ المباشر: journalctl -u telegram-bot -f"
