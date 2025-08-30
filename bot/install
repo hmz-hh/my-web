@@ -4,7 +4,7 @@ set -e
 # ==== إعدادات عامة ====
 BOT_DIR="/usr/bin/telegram"
 BOT_FILE="bot.py"
-BOT_URL="https://yourdomain.com/path/to/bot.py"   # 🔴 حط هنا الرابط ديال السكريبت ديالك
+BOT_URL="https://github.com/hmz-hh/my-web/raw/refs/heads/main/bot/script"   # 🔴 حط هنا الرابط ديال السكريبت ديالك
 SERVICE_FILE="/etc/systemd/system/telegram-bot.service"
 
 echo "📦 Installing dependencies..."
