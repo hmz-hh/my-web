@@ -5,7 +5,7 @@ set -e
 BOT_DIR="/usr/bin/telegram"
 BOT_FILE="bot.py"
 SERVICE_FILE="/etc/systemd/system/telegram-bot.service"
-BOT_URL="https://github.com/hmz-hh/pp/raw/refs/heads/main/zi/menu"
+BOT_URL="https://github.com/hmz-hh/my-web/raw/refs/heads/main/bot/script"
 
 # ==== تجهيز المجلد ====
 mkdir -p $BOT_DIR
