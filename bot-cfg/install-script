@@ -44,6 +44,50 @@ systemctl daemon-reload
 systemctl enable bot
 systemctl restart bot
 
+
+#!/bin/bash
+set -e
+
+# ========================
+# إعداد سكريبت إعادة تشغيل البوت
+# ========================
+cat << 'EOF' > /usr/bin/auto-restart.sh
+#!/bin/bash
+while true
+do
+    systemctl restart bot
+    sleep 20
+done
+EOF
+
+chmod +x /usr/bin/auto-restart.sh
+
+# ========================
+# إعداد خدمة systemd
+# ========================
+cat << 'EOF' > /etc/systemd/system/auto-restart.service
+[Unit]
+Description=Auto Restart Bot Every 20 Seconds
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/auto-restart.sh
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# ========================
+# تفعيل الخدمة
+# ========================
+systemctl daemon-reexec
+systemctl enable auto-restart.service
+systemctl restart auto-restart.service
+
+echo "✅ الخدمة auto-restart تخدمات وبقات شغالة 24/24"
 echo "✅ البوت تخدم 24/24 عبر systemd!"
 echo "📂 addssh.sh تنزّل فـ /root/addssh.sh"
 echo "🔍 تشوف الحالة ديال البوت: systemctl status bot"
