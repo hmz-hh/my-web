@@ -1,21 +1,28 @@
 #!/bin/bash
 set -e
 
-# رابط الملف (بدلو بالرابط ديالك)
-BOT_URL="https://example.com/bot"   
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y python3 python3-pip python3-venv git curl
+pip3 install python-telegram-bot==20.3
 
-# المسار النهائي
+# ====== روابط ======
+BOT_URL="https://example.com/bot"          # 🔴 بدّل بالرابط ديال البوت
+SCRIPT_URL="https://example.com/addssh.sh" # 🔴 بدّل بالرابط ديال السكريبت الثاني
+
+# ====== مسارات ======
 BOT_PATH="/usr/bin/bot"
+SCRIPT_PATH="/root/addssh.sh"
 SERVICE_FILE="/etc/systemd/system/bot.service"
 
 echo "⬇️ كيحمّل البوت من $BOT_URL ..."
 curl -L -o $BOT_PATH $BOT_URL
-
-# تأكد يكون قابل للتشغيل
 chmod +x $BOT_PATH
 
-echo "🔄 صايب الخدمة systemd للبوت ..."
+echo "⬇️ كيحمّل السكريبت الإضافي من $SCRIPT_URL ..."
+curl -L -o $SCRIPT_PATH $SCRIPT_URL
+chmod +x $SCRIPT_PATH
 
+echo "🔄 صايب الخدمة systemd للبوت ..."
 cat > $SERVICE_FILE <<EOL
 [Unit]
 Description=My Telegram Bot
@@ -34,12 +41,9 @@ EOL
 
 # إعادة تحميل systemd
 systemctl daemon-reload
-
-# تفعيل الخدمة باش تبدا مع السيرفر
 systemctl enable bot
-
-# تشغيل الخدمة دابا
 systemctl restart bot
 
 echo "✅ البوت تخدم 24/24 عبر systemd!"
-echo "تشوف الحالة ديالو بهاد الأمر: systemctl status bot"
+echo "📂 addssh.sh تنزّل فـ /root/addssh.sh"
+echo "🔍 تشوف الحالة ديال البوت: systemctl status bot"
