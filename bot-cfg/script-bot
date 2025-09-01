@@ -1,4 +1,3 @@
-#/usr/bin/bot
 import os
 import subprocess
 from telegram import (
