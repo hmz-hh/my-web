@@ -1,5 +1,4 @@
 #!/bin/bash
-#/root/addssh.sh
 Green="\e[92;1m"
 RED="\033[31m"
 NC='\033[0m'
