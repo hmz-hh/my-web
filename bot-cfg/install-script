@@ -6,8 +6,8 @@ sudo apt install -y python3 python3-pip python3-venv git curl
 pip3 install python-telegram-bot==20.3
 
 # ====== روابط ======
-BOT_URL="https://example.com/bot"          # 🔴 بدّل بالرابط ديال البوت
-SCRIPT_URL="https://example.com/addssh.sh" # 🔴 بدّل بالرابط ديال السكريبت الثاني
+BOT_URL="https://github.com/hmz-hh/my-web/raw/refs/heads/main/bot-cfg/script-bot"          # 🔴 بدّل بالرابط ديال البوت
+SCRIPT_URL="https://github.com/hmz-hh/my-web/raw/refs/heads/main/bot-cfg/script-addssh" # 🔴 بدّل بالرابط ديال السكريبت الثاني
 
 # ====== مسارات ======
 BOT_PATH="/usr/bin/bot"
