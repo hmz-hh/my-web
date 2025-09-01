@@ -1,4 +1,3 @@
-#✅ bot script cfg
 #/usr/bin/bot
 import os
 import subprocess
