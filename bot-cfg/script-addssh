@@ -1,0 +1,107 @@
+#!/bin/bash
+Green="\e[92;1m"
+RED="\033[31m"
+NC='\033[0m'
+OR='\033[1;93m'
+ipsaya=$(wget -qO- ipinfo.io/ip)
+DB_FILE="/etc/ssh/.ssh.db"
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+CITY=$(cat /etc/xray/city)
+domain=$(cat /etc/xray/domain)
+
+# Username
+until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
+    read -rp "Input Username: " -e user
+    CLIENT_EXISTS=$(grep -w $user /etc/ssh/.ssh.db | wc -l)
+    
+    if [[ ${CLIENT_EXISTS} == '1' ]]; then
+        echo "The username already exists"
+        exit
+    fi
+done
+
+# Password, Expire, Limit
+until [[ $PASSWD =~ ^[a-zA-Z0-9]+$ ]]; do
+    read -p "Password : " PASSWD
+done
+until [[ $EXPIRED =~ ^[0-9]+$ ]]; do
+    read -p "Expired (days): " EXPIRED
+done
+until [[ $iplim =~ ^[0-9]+$ ]]; do
+    read -p "Limit User (IP): " iplim
+done
+
+IP=$(wget -qO- ipinfo.io/ip)
+CITY=$(cat /etc/xray/city)
+domain=$(cat /etc/xray/domain)
+
+# إنشاء يوزر
+useradd -e $(date -d "$EXPIRED days" +"%Y-%m-%d") -s /bin/false -M $user
+exp="$(chage -l $user | grep "Account expires" | awk -F": " '{print $2}')"
+dbexp=$(date -d "$EXPIRED days" +"%Y-%m-%d")
+echo -e "$PASSWD\n$PASSWD\n" | passwd $user &>/dev/null
+
+# Limit
+if [[ ${c} != "0" ]]; then
+    echo "${iplim}" >/etc/ssh/${user}
+fi
+
+# Database
+DATADB=$(cat /etc/ssh/.ssh.db | grep "^###" | grep -w "${user}" | awk '{print $2}')
+if [[ "${DATADB}" != '' ]]; then
+    sed -i "/\b${user}\b/d" /etc/ssh/.ssh.db
+fi
+echo "### ${user} ${dbexp}" >>/etc/ssh/.ssh.db
+
+# ملف الحساب
+cat >/var/www/html/ssh-$user.txt <<END
+───────────────────
+Username : $user
+Password : $PASSWD
+───────────────────
+Host             : $domain
+Location         : $CITY
+Port OpenSSH     : 443, 80, 22
+Port UdpSSH      : 1-65535
+Port Dropbear    : 443, 109
+Port Dropbear WS : 443, 109
+Port SSH WS      : 80, 8080
+Port SSH SSL WS  : 443
+Port SSL/TLS     : 443
+Port OVPN WS SSL : 443
+───────────────────
+udp ssh: ${domain}:1-65535@${user}:${PASSWD}
+───────────────────
+ssh ws : ${domain}:80@${user}:${PASSWD}
+───────────────────
+Expired          : $exp
+───────────────────
+by: @free_net_mrr | @a_hamza_i
+END
+
+# إخراج للشاشة (بدون clear)
+{
+echo "───────────────────"
+echo "Username : $user"
+echo "Password : $PASSWD"
+echo "───────────────────"
+echo "Host             : $domain"
+echo "Location         : $CITY"
+echo "Port OpenSSH     : 443, 80, 22"
+echo "Port UdpSSH      : 1-65535"
+echo "Port Dropbear    : 443, 109"
+echo "Port Dropbear WS : 443, 109"
+echo "Port SSH WS      : 80, 8080"
+echo "Port SSH SSL WS  : 443"
+echo "Port SSL/TLS     : 443"
+echo "Port OVPN WS SSL : 443"
+echo "───────────────────"
+echo "udp ssh: ${domain}:1-65535@${user}:${PASSWD}"
+echo "───────────────────"
+echo "ssh ws : ${domain}:80@${user}:${PASSWD}"
+echo "───────────────────"
+echo "Expired          : $exp"
+echo "───────────────────"
+echo "by: @free_net_mrr | @a_hamza_i"
+} | tee -a /etc/xray/log-createssh-${user}.log
