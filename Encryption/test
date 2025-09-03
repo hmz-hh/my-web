@@ -1,3 +1,22 @@
+#!/bin/bash
+#
+# This file encrypted at Sat Apr 20 10:03:59 PM WIB 2024 by
+# +------------------------------------------------------+
+# | Author: Rerechan02                                   |
+# | Region: Indonesia ( Asia Tenggara )                  |
+# | Chanel: https://t.me/fn_project / Admin  @Rerechan02 |
+# +------------------------------------------------------+
+# Don't forget follow me on:
+# -  https://github.com/Rerechan02
+# Sponsor this project:
+# -  https://t.me/fn_project/245
+# -  https://prof.rerechan02.com
+
+skip=70
+tab='	'
+nl='
+'
+IFS=" $tab$nl"
 
 # Ensure critical variables are present, especially when not defined by login(1)
 # Note: $USER may not always be executed (e.g., in containers)
